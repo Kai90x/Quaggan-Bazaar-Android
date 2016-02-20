@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/pref_color_changer">
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="@string/prefkey_toolbar"
+            android:title="@string/pref_toolbar"
+            android:defaultValue="@color/GuildMainColor" />
+
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="@string/prefkey_card"
+            android:title="@string/pref_card"
+            android:defaultValue="@color/CardDefault"
+            alphaSlider="true"/>
+
+        <SwitchPreference
+            android:key="@string/prefkey_quaggan"
+            android:title="@string/pref_quaggan"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_notification">
+
+        <ListPreference
+            android:key="@string/prefkey_sync"
+            android:title="@string/pref_sync"
+            android:dialogTitle="@string/pref_sync"
+            android:summary="@string/pref_sync_summary"
+            android:entries="@array/sync_rates"
+            android:defaultValue="@string/default_sync"
+            android:entryValues="@array/sync_rates_values" />
+
+        <CheckBoxPreference
+            android:key="@string/prefkey_send_email"
+            android:title="@string/pref_send_email"/>
+
+        <EditTextPreference
+            android:key="@string/prefkey_email_address"
+            android:title="@string/pref_email_address"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

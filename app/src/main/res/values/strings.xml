@@ -1,0 +1,629 @@
+<resources>
+    <string name="app_name">Quaggan Bazaar</string>
+
+    <string name="loading">Loading</string>
+
+    <!--Layout-->
+    <string name="buy_price">Buy Price:</string>
+    <string name="Sell_price">Sell Price:</string>
+    <string name="item_details">Item Details</string>
+
+    <!--Menu-->
+    <string name="search">Search</string>
+    <string name="news">News</string>
+    <string name="dungeons">Dungeons</string>
+    <string name="achievements">Daily Achievements (Beta)</string>
+    <string name="events">Events</string>
+    <string name="legendarycraft">Legendary Crafting</string>
+    <string name="notifications">Notifications</string>
+    <string name="action_filter">Filter</string>
+    <string name="action_notify">Notify</string>
+    <string name="action_subtype">Subtype</string>
+    <string name="action_orderby">Order By</string>
+    <string name="action_addApiKey">Add Key</string>
+    <string name="action_orderAsc">Ascending</string>
+    <string name="action_orderDesc">Descending</string>
+    <string name="action_clear">Clear All</string>
+
+    <!--Item Types-->
+    <string name="item_types">Item Types</string>
+
+    <string name="item_all">All</string>
+    <string name="item_armor">Armor</string>
+    <string name="item_back">Back</string>
+    <string name="item_bag">Bag</string>
+    <string name="item_consumable">Consumable</string>
+    <string name="item_container">Container</string>
+    <string name="item_craftingmaterial">Crafting Material</string>
+    <string name="item_gathering">Gathering</string>
+    <string name="item_gizmo">Gizmo</string>
+    <string name="item_mini">Mini Pet</string>
+    <string name="item_tool">Tool</string>
+    <string name="item_trait">Trait</string>
+    <string name="item_trinket">Trinket</string>
+    <string name="item_trophy">Trophy</string>
+    <string name="item_upgrade_component">Upgrade Component</string>
+    <string name="item_weapon">Weapon</string>
+
+    <string-array name="type_array">
+        <item>All</item>
+        <item>Armor</item>
+        <item>Back</item>
+        <item>Bag</item>
+        <item>Consumable</item>
+        <item>Container</item>
+        <item>Crafting Material</item>
+        <item>Gathering</item>
+        <item>Gizmo</item>
+        <item>Mini Pet</item>
+        <item>Tool</item>
+        <item>Trait</item>
+        <item>Trinket</item>
+        <item>Trophy</item>
+        <item>Upgrade Component</item>
+        <item>Weapon</item>
+    </string-array>
+
+    <!--SubType-->
+    <string-array name="subtype_armor_array">
+        <item>All</item>
+        <item>Boots</item>
+        <item>Coat</item>
+        <item>Gloves</item>
+        <item>Helm</item>
+        <item>Helm Aquatic</item>
+        <item>Leggings</item>
+        <item>Shoulders</item>
+    </string-array>
+
+    <!--SubType-->
+    <string-array name="subtype_consumable_array">
+        <item>All</item>
+        <item>Appearance Change</item>
+        <item>Booze</item>
+        <item>Contract Npc</item>
+        <item>Food</item>
+        <item>Generic</item>
+        <item>Halloween</item>
+        <item>Immediate</item>
+        <item>Transmutation</item>
+        <item>Unlock</item>
+        <item>Upgrade Removal</item>
+        <item>Utility</item>
+    </string-array>
+
+    <!--SubType-->
+    <string-array name="subtype_container_array">
+        <item>All</item>
+        <item>Default</item>
+        <item>GiftBox</item>
+        <item>OpenUI</item>
+    </string-array>
+
+    <!--SubType-->
+    <string-array name="subtype_gatheringtool_array">
+        <item>All</item>
+        <item>Foraging</item>
+        <item>Logging</item>
+        <item>Mining</item>
+    </string-array>
+
+    <!--SubType-->
+    <string-array name="subtype_gizmo_array">
+        <item>All</item>
+        <item>Default</item>
+        <item>Container Key</item>
+        <item>Rentable Contract Npc</item>
+        <item>Unlimited Consumable</item>
+    </string-array>
+
+    <!--SubType-->
+    <string-array name="subtype_trinket_array">
+        <item>All</item>
+        <item>Accessory</item>
+        <item>Amulet</item>
+        <item>Ring</item>
+    </string-array>
+
+    <!--SubType-->
+    <string-array name="subtype_upgradecomponent_array">
+        <item>All</item>
+        <item>Default</item>
+        <item>Gem</item>
+        <item>Rune</item>
+        <item>Sigil</item>
+    </string-array>
+
+    <!--SubType-->
+    <string-array name="rarity_array">
+        <item>All</item>
+        <item>Junk</item>
+        <item>Basic</item>
+        <item>Fine</item>
+        <item>Masterwork</item>
+        <item>Rare</item>
+        <item>Exotic</item>
+        <item>Ascended</item>
+        <item>Legendary</item>
+    </string-array>
+
+    <!--SubType-->
+    <string-array name="all_array">
+        <item>All</item>
+    </string-array>
+
+    <!--SubType-->
+    <string-array name="subtype_weapon_array">
+        <item>All</item>
+        <item>Axe</item>
+        <item>Dagger</item>
+        <item>Mace</item>
+        <item>Pistol</item>
+        <item>Scepter</item>
+        <item>Sword</item>
+        <item>Focus</item>
+        <item>Shield</item>
+        <item>Torch</item>
+        <item>Warhorn</item>
+        <item>Greatsword</item>
+        <item>Hammer</item>
+        <item>LongBow</item>
+        <item>Rifle</item>
+        <item>ShortBow</item>
+        <item>Staff</item>
+        <item>Harpoon</item>
+        <item>Speargun</item>
+        <item>Trident</item>
+        <item>Large Bundle</item>
+        <item>Small Bundle</item>
+        <item>Toy</item>
+        <item>Two Handed Toy</item>
+    </string-array>
+
+    <!--Account-->
+    <string name="account">Account</string>
+    <string name="account_api">API Key</string>
+    <string name="account_api_Help">How to get an API Key</string>
+    <string name="account_bank">Bank</string>
+    <string name="account_pvp_stats">PVP Stats</string>
+    <string name="account_pvp_games">PVP Games</string>
+    <string name="account_material">Material</string>
+    <string name="account_favorite_items">Favorite Items</string>
+    <string name="account_my_character">My Characters</string>
+    <string name="account_my_currenct_transactions">Current Transactions</string>
+    <string name="account_history_transactions">Transactions History</string>
+
+    <!--Preference-->
+    <string name="preference">Preference</string>
+    <string name="preference_setting">Setting</string>
+    <string name="preference_credit">Credit</string>
+    <string name="preference_email">Email That Dev</string>
+    <string name="preference_Share">Share</string>
+    <string name="preference_adsfree">Ads-Free</string>
+    <string name="choose_one">Choose One:</string>
+    <string name="recommend_text">\nLet me recommend you this app\n\n</string>
+    <string name="google_play_link">https://play.google.com/store/apps/details?id=com.kai.guildwarsv2\n\n</string>
+
+    <!--Urls-->
+    <string name="url_base">http://quagganbazaarapi.kai-mx.net</string>
+    <string name="url_items">/items/Guild</string>
+    <string name="url_items_search">/items/Guild/search</string>
+    <string name="url_ids">/items/Guild/ids/</string>
+    <string name="url_timer">/event/timer</string>
+    <string name="url_email">/email</string>
+    <string name="url_price">/prices/Guild/</string>
+    <string name="url_recipe_item">/recipe/item/</string>
+    <string name="url_news">/news</string>
+    <string name="url_achievements">/achievements</string>
+    <string name="url_quaggans">https://static.staticwars.com/quaggans/{quaggan}.jpg</string>
+    <string name="url_v2_base">https://api.guildwars2.com/v2</string>
+    <string name="url_v2_account">/account</string>
+    <string name="url_v2_token">/tokeninfo</string>
+    <string name="url_v2_character">/characters</string>
+    <string name="url_v2_items">/items</string>
+    <string name="url_v2_transactions">/commerce/transactions</string>
+    <string name="url_v2_prices">/commerce/prices/</string>
+    <string name="url_v2_buy">/buys</string>
+    <string name="url_v2_sell">/sells</string>
+    <string name="url_v2_current">/current</string>
+    <string name="url_v2_history">/history</string>
+    <string name="url_v2_bank">/bank</string>
+    <string name="url_v2_materials">/materials</string>
+    <string name="url_v2_recipe_search">/recipes/search</string>
+    <string name="url_v2_recipe">/recipes/</string>
+    <string name="url_v2_pvpstats">/pvp/stats</string>
+    <string name="url_v2_pvpgames">/pvp/games</string>
+    <string name="url_kai_quaggans">http://www.kai-mx.net/wp-content/uploads/GuildWarsV2/quaggans/{quaggan}.jpg</string>
+    <string name="url_kai_boss">http://www.kai-mx.net/wp-content/uploads/GuildWarsV2/boss/{boss}.jpg</string>
+    <string name="url_kai_price_update">/prices/Guild/Sync/Update/</string>
+    <string name="url_kai_dungeons">/dungeons</string>
+    <string name="url_kai_craft">/crafting</string>
+
+    <!--Parameters-->
+    <string name="para_batches_size">batch_size</string>
+    <string name="para_batches_num">batch_num</string>
+    <string name="para_light">light</string>
+    <string name="para_includePrice">includePrice</string>
+    <string name="para_name">name</string>
+    <string name="para_type">type</string>
+    <string name="para_subtype">subtype</string>
+    <string name="para_buyPriceMin">buyPriceMin</string>
+    <string name="para_buyPriceMax">buyPriceMax</string>
+    <string name="para_sellPriceMin">sellPriceMin</string>
+    <string name="para_sellPriceMax">sellPriceMax</string>
+    <string name="para_rarity">rarity</string>
+    <string name="para_levelmin">levelmin</string>
+    <string name="para_levelmax">levelmax</string>
+    <string name="para_order_by">orderby</string>
+    <string name="para_desc_or_asc">ascOrdesc</string>
+    <string name="para_page">page</string>
+    <string name="para_ids">ids</string>
+
+    <string name="para_emailTo">emailTo</string>
+    <string name="para_emailBody">emailBody</string>
+    <string name="para_emailFrom">emailFrom</string>
+    <string name="para_emailSubject">emailSubject</string>
+    <string name="para_emailItems">emailItems</string>
+    <string name="para_notificationid">notificationid</string>
+
+    <!--News-->
+    <string name="news_author">Author</string>
+    <string name="news_date">Date</string>
+
+    <!--Dialog-->
+    <string name="dialog_title_subtype">Subtype</string>
+    <string name="dialog_title_order_by">Order By</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_add">Add</string>
+    <string name="dialog_error">Oops</string>
+    <string name="dialog_warning">Warning</string>
+    <string name="dialog_send_email">Sending Email</string>
+    <string name="dialog_email_sent">Email Sent</string>
+    <string name="dialog_email_error">Email could not be sent</string>
+    <string name="dialog_api_dialog_title">Enter your API</string>
+    <string name="dialog_waitfortask">Please wait for the current task to complete first</string>
+    <string name="dialog_no_network">No network found</string>
+    <string name="dialog_invalid">Invalid url provided</string>
+    <string name="dialog_noItemsFound">No Items Found</string>
+    <string name="dialog_server_error">Oh god i hate this server T-T</string>
+    <string name="dialog_error_occured">Sorry, an error has occured while fetching your data. Do you want to send a report?</string>
+    <string name="dialog_api_check">Validating API Key</string>
+    <string name="dialog_api_invalid">Invalid API Key entered</string>
+    <string name="dialog_api_error_retrieval">Sorry an error has occurred and the selected api key could not be retrieved</string>
+    <string name="dialog_api_alreadyadded">API Key has already been added</string>
+    <string name="dialog_api_valid">API Key accepted</string>
+    <string name="dialog_deletekey">Are you sure you want to delete this key?</string>
+    <string name="dialog_deleteallkey">Are you sure you want to delete all api keys?</string>
+    <string name="dialog_select_key">Please select an API key first</string>
+    <string name="dialog_no_email">Please enter a valid email address first</string>
+    <string name="dialog_invalid_email">Invalid email entered</string>
+    <string name="dialog_notification">Notify On</string>
+    <string name="dialog_error_no_price">Please enter a price</string>
+    <string name="price_in_copper">Price in copper</string>
+    <string name="notification_added">Notification has been added</string>
+    <string name="notification_sent">Notified</string>
+    <string name="dialog_delete_all_notification">Are you sure you want to delete all your notifications?</string>
+    <string name="dialog_delete_notification">Are you sure you want to delete this notification?</string>
+    <string name="error_achievements">An error has occurred while fetching the achievements</string>
+
+
+    <!--SnackBar-->
+    <string name="snackbar_action">Yes</string>
+    <string name="snackbar_nofavorite">Please add some item as your favorite first</string>
+    <string name="snackbar_noConnection">No internet connection found</string>
+
+    <!--Quaggans-->
+    <string-array name="quaggans_array">
+        <item>aloha</item>
+        <item>attack</item>
+        <item>bear</item>
+        <item>bowl</item>
+        <item>breakfast</item>
+        <item>bubble</item>
+        <item>cake</item>
+        <item>cheer</item>
+        <item>coffee</item>
+        <item>construction</item>
+        <item>cow</item>
+        <item>cry</item>
+        <item>elf</item>
+        <item>ghost</item>
+        <item>girl</item>
+        <item>hat</item>
+        <item>helmut</item>
+        <item>hoodie-down</item>
+        <item>hoodie-up</item>
+        <item>killerwhale</item>
+        <item>knight</item>
+        <item>lollipop</item>
+        <item>lost</item>
+        <item>moving</item>
+        <item>party</item>
+        <item>present</item>
+        <item>quaggan</item>
+        <item>rain</item>
+        <item>scifi</item>
+        <item>seahawks</item>
+        <item>sleep</item>
+        <item>summer</item>
+        <item>vacation</item>
+    </string-array>
+
+    <!--Advance Search-->
+    <string name="search_title">Advance Search</string>
+    <string name="search_name">Name</string>
+    <string name="search_type">Type</string>
+    <string name="search_subtype">Subtype</string>
+    <string name="search_rarity">Rarity</string>
+    <string name="search_levelmin">Minimum Level</string>
+    <string name="search_levelmax">Maximum Level</string>
+    <string name="search_buyPriceMin">Minimum Buying Price</string>
+    <string name="search_buyPriceMax">Maximum Buying Price</string>
+    <string name="search_sellPriceMin">Maximum Selling Price</string>
+    <string name="search_sellPriceMax">Minimum Selling Price</string>
+
+    <!--Order by-->
+    <string-array name="orderby_array">
+        <item>Default</item>
+        <item>Name</item>
+        <item>Date Updated</item>
+        <item>Buy Price</item>
+        <item>Sell Price</item>
+    </string-array>
+
+    <!--Transaction type-->
+    <string-array name="transaction_array">
+        <item>Buy</item>
+        <item>Sell</item>
+    </string-array>
+
+    <string name="transaction_buy">Buy</string>
+    <string name="transaction_sell">Sell</string>
+
+    <string name="order_default">Default</string>
+    <string name="order_name">Name</string>
+    <string name="order_date">Date Updated</string>
+    <string name="order_buy">Buy Price</string>
+    <string name="order_sell">Sell Price</string>
+
+    <string-array name="character_tabs">
+        <item>Details</item>
+        <item>Equipment</item>
+        <item>Inventory</item>
+    </string-array>
+
+    <string-array name="pvpstats_tabs">
+        <item>General</item>
+        <item>Details</item>
+    </string-array>
+
+    <string-array name="sync_rates">
+        <item>5 Minutes</item>
+        <item>15 Minutes</item>
+        <item>30 Minutes</item>
+        <item>1 Hour</item>
+        <item>3 Hours</item>
+        <item>6 Hours</item>
+        <item>12 Hours</item>
+        <item>Never</item>
+    </string-array>
+
+    <string-array name="sync_rates_values">
+        <item>5</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>Never</item>
+    </string-array>
+
+    <string-array name="condition_array">
+        <item>&lt;</item>
+        <item>&gt;</item>
+    </string-array>
+
+    <string name="default_sync">15</string>
+    <string name="never">Never</string>
+    <string name="lessThan">&lt;</string>
+    <string name="greaterThan">&gt;</string>
+    <string name="lessThanText"> is less than </string>
+    <string name="greaterThanText"> is greater than </string>
+
+    <string name="character_details_name">Name</string>
+    <string name="character_details_race">Race</string>
+    <string name="character_details_gender">Gender</string>
+    <string name="character_details_profession">Profession</string>
+    <string name="character_details_level">Level</string>
+    <string name="character_details_guild">Guild</string>
+    <string name="character_details_created">Created</string>
+    <string name="character_details_age">Play Time</string>
+    <string name="character_details_death">Death</string>
+
+    <string name="character_equipment_upgrades">Upgrades</string>
+    <string name="character_bag_size">Size: </string>
+    <string name="character_bag_count">Count: </string>
+
+    <string name="transaction_item_price">Price: </string>
+    <string name="transaction_item_date">Date: </string>
+    <string name="transaction_item_quantity">Quantity: </string>
+
+    <string name="pref_color_changer">Color Changer</string>
+    <string name="pref_toolbar">Toolbar</string>
+    <string name="pref_toolbar_text">Toolbar Text</string>
+    <string name="pref_card">Card</string>
+    <string name="pref_card_header">Card Header</string>
+    <string name="pref_card_content">Card Content</string>
+    <string name="pref_notification">Notification</string>
+    <string name="pref_sync">Sync Rate</string>
+    <string name="pref_sync_summary">The amount of time between which the app will sync up with the server to check for item that you have added for price notification</string>
+    <string name="pref_send_email">Send an email</string>
+    <string name="pref_email_address">Email Address</string>
+    <string name="pref_quaggan">Quaggan Background Image</string>
+
+    <string name="prefkey_quaggan">QuagganBackground</string>
+    <string name="prefkey_color_changer">ColorChanger</string>
+    <string name="prefkey_toolbar">Toolbar</string>
+    <string name="prefkey_toolbar_text">ToolbarText</string>
+    <string name="prefkey_card">Card</string>
+    <string name="prefkey_card_header">CardHeader</string>
+    <string name="prefkey_card_content">CardContent</string>
+    <string name="prefkey_notification">Notification</string>
+    <string name="prefkey_sync">SyncRate</string>
+    <string name="prefkey_send_email">SendAnEmail</string>
+    <string name="prefkey_email_address">EmailAddress</string>
+
+    <string name="email_addreess">Email Address</string>
+    <string name="email_tag">Thought of something? Have an issue? Just let me know</string>
+    <string name="email_email_hint">Enter your email address</string>
+    <string name="email_body_hint">Enter your message</string>
+    <string name="email_btn_email">Send Email</string>
+    <string name="email_send">Email sent! Thank you!</string>
+    <string name="great">Great</string>
+    <string name="email_no_content">Please write me a little something...</string>
+
+
+    <string name="defense">Defense</string>
+    <string name="description">Description</string>
+    <string name="attributes">Attributes</string>
+    <string name="damageType">Damage Type</string>
+    <string name="minPower">Minimum Damage</string>
+    <string name="maxPower">Maximum Damage</string>
+    <string name="buff_effect">Effects</string>
+
+    <string name="notication_service">Guild Wars Service</string>
+    <string name="email_subject_items">Guild Wars 2 Black Lion Notification</string>
+    <string name="email_body_items"><![CDATA[<h3>Item List:</h3>]]></string>
+    <string name="copper">copper</string>
+    <string name="silver">silver</string>
+    <string name="gold">gold</string>
+    <string name="next_events">Next Events</string>
+
+    <string name="event_time">Time: </string>
+    <string name="event_location">Location: </string>
+    <string name="hint_price_copper">Price are in copper</string>
+
+    <string name="back_to_exit">Press back again to exit</string>
+    <string name="service_unavailable">The guild wars service is unavailable.</string>
+
+    <string name="dialog_character_inventory">Could not get character\'s inventory</string>
+    <string name="dialog_character_details">Could not get character\'s details</string>
+    <string name="dialog_character_equipment">Could not get character\'s equipment</string>
+    <string name="dialog_pvp_stats_issue">Could not get account\'s pvp stats</string>
+    <string name="dialog_pvp_stats_games">Could not get account\'s pvp games</string>
+    <string name="api_changing_error">An error has occurred while changing your api key</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-1856321092794483/6982333458</string>
+
+    <string name="helping_quote1">No man stands so straight as when he stoops to help a child</string>
+    <string name="save_a_child">Child Fund</string>
+    <string name="Kai">Kai</string>
+    <string name="save_child_url">https://www.childfund.org/Give_Now/</string>
+    <string name="donation">Donation</string>
+    <string name="later">Later</string>
+    <string name="go_to_donation">Go to Donation Page</string>
+
+    <string name="arena_login">https://account.arena.net/</string>
+    <string name="help_get_key">How to generate an API key</string>
+    <string name="help_step_1">Step 1 - Go to <u>https://account.arena.net/</u></string>
+    <string name="help_step_2">Step 2 - Login using your username and password</string>
+    <string name="help_step_3">Step 3 - Click on \'Applications\'</string>
+    <string name="help_step_5">Step 4 - Click on \'New Key\' and enter a name and select all permissions</string>
+    <string name="help_step_6">Step 5 - Save your key</string>
+    <string name="help_step_7">Step 6 - Copy and paste your key in the app\'s \'API Key\' section</string>
+
+    <string name="current_prices">Current Prices</string>
+
+    <string name="item_error_pricedetails">An error has occurred and price details could not be fetched</string>
+    <string name="item_error_pricechart">An error has occurred and price chart could not be fetched</string>
+    <string name="item_error_currentprice">An error has occurred and current price could not be fetched</string>
+    <string name="api_error">An error has occurred while fetching your details with this api key. Try to renew your api key.</string>
+
+    <string name="junk">Junk</string>
+    <string name="basic">Basic</string>
+    <string name="fine">Fine</string>
+    <string name="masterwork">Masterwork</string>
+    <string name="rare">Rare</string>
+    <string name="exotic">Exotic</string>
+    <string name="ascended">Ascended</string>
+    <string name="lengendary">Legendary</string>
+
+    <string name="action_rarity_colors">Rarity Colors</string>
+    <string name="MiniPage">MiniPage</string>
+
+    <string name="pve">PvE</string>
+    <string name="pvp">PvP</string>
+    <string name="wvw">WvW</string>
+
+    <string name="token_label">Token: </string>
+    <string name="reward_label">Reward: </string>
+
+    <string name="error_dungeons">Error while fetching dungeons</string>
+
+    <string name="action_recipe">Recipe</string>
+    <string name="recipe_list">Recipe List</string>
+    <string name="no_recipe_found">No Recipes found for this item</string>
+    <string name="recipe_count">Count: </string>
+
+    <string name="pvpstats_general">General</string>
+    <string name="pvpstats_details">Details</string>
+
+    <string name="pvpstats_wins">Wins</string>
+    <string name="pvpstats_loss">Loss</string>
+    <string name="pvpstats_dessertations">Dessertations</string>
+    <string name="pvpstats_byes">Byes</string>
+    <string name="pvpstats_forfeits">Forfeits</string>
+    <string name="pvpstats_rank">Rank</string>
+    <string name="pvpstats_error_aggregate">Sorry aggregate PVP information is not available for this account</string>
+    <string name="pvpstats_error_detailed">Sorry detailed PVP information is not available for this account</string>
+
+    <string name="pvpgames">PVP Games</string>
+    <string name="pvpgames_result">Result</string>
+    <string name="pvpgames_team">Team</string>
+    <string name="pvpgames_profession">Profession</string>
+    <string name="pvpgames_red">Scores Red</string>
+    <string name="pvpgames_blue">Scores Blue</string>
+
+    <string name="profession_mesmer">Mesmer</string>
+    <string name="profession_guardian">Guardian</string>
+    <string name="profession_necromancer">Necromancer</string>
+    <string name="profession_ranger">Ranger</string>
+    <string name="profession_elemantalist">Elemantalist</string>
+    <string name="profession_warrior">Warrior</string>
+    <string name="profession_thief">Thief</string>
+    <string name="profession_engineer">Engineer</string>
+
+
+    <string name="active">Active</string>
+    <string name="adsfree">Ads-Free Version</string>
+    <string name="proceed">Proceed</string>
+    <string name="adsfree_redirect">You will be redirected to the amazon store for the paid version</string>
+    <string name="amazon_link">http://www.amazon.com/KAI-Dragon-Thorns/dp/B016F6VQXW</string>
+
+    <string name="donate_app">App Donation</string>
+    <string name="donate_invalid_amount">Invalid amount has been entered</string>
+    <string name="donate_thank_you">Thank you so much for your help :)</string>
+    <string name="help_make_it_grow">A little help goes a long way. I\'m using Paypal since google wallet is not supported in my country yet. Thank you.</string>
+
+    <string name="title_activity_legendary_recipe">Legendary Crafting</string>
+
+    <string name="amount">Amount left:</string>
+    <string name="items_found">{0} found</string>
+    <string name="items_found_dialog_title">Items found</string>
+    <string name="no_items_found">No items found</string>
+    <string name="go_to_item_detail">Go to Item Detail</string>
+    <string name="equip_to">equipment ({0})</string>
+    <string name="bag">bags</string>
+
+    <string name="checking_bank">Checking Bank for Items</string>
+    <string name="checking_material">Checking Materials for Items</string>
+    <string name="checking_characters">Checking Characters for Items</string>
+    <string name="items_found_detailed">- {0} found in {1}</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

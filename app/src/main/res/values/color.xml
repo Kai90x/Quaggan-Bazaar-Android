@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ColorPrimary">#e74c3c</color>
+    <color name="ColorPrimaryDark">#c0392b</color>
+    <color name="ColorGrey">#A0A0A0</color>
+    <color name="tabsScrollColor">#8a140e</color>
+
+    <color name="GuildMainColor">#ffe7000a</color>
+    <color name="MilkWhite">#eff4ff</color>
+    <color name="SpinnerBackground">#689F38</color>
+    <color name="clouds">#ecf0f1</color>
+    <color name="black">#000000</color>
+    <color name="CardDefault">#D9FFFFFF</color>
+
+    <color name="belizeHole">#2980b9</color>
+    <color name="goldenrod">#DAA520</color>
+    <color name="junk">#C8F7C5</color>
+    <color name="basic">#26A65B</color>
+    <color name="fine">#19B5FE</color>
+    <color name="masterwork">#446CB3</color>
+    <color name="rare">#AEA8D3</color>
+    <color name="exotic">#913D88</color>
+    <color name="ascended">#D24D57</color>
+    <color name="legendary">#F22613</color>
+
+</resources>

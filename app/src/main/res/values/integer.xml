@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <integer name="COLOR_BLACK">0xff000000</integer>
+    <integer name="COLOR_WHITE">0xffffffff</integer>
+    <integer name="COLOR_GREEN">0xff00ff00</integer>
+    <integer name="COLOR_GREY">0xD9505050</integer>
+    <integer name="COLOR_GUILDMAIN">0xffe74c3c</integer>
+    <integer name="COLOR_GUILDRED_TRANS">0xD9e74c3c</integer>
+    <integer name="COLOR_CARDDEFAULT">0xD9FFFFFF</integer>
+    <integer name="COLOR_PVE">0xD926A65B</integer>
+    <integer name="COLOR_PVP">0xD9913D88</integer>
+    <integer name="COLOR_WVW">0xD9e74c3c</integer>
+</resources>
