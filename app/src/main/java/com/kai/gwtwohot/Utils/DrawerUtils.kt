@@ -3,7 +3,7 @@ package com.kai.gwtwohot.Utils
 import android.app.Activity
 import android.support.v7.widget.Toolbar
 import android.view.View
-import com.kai.gwtwohot.Activities.IActivity
+import com.kai.gwtwohot.Activities.IKaiActivity
 import com.kai.gwtwohot.R
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
@@ -16,7 +16,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
  */
 object DrawerUtils {
 
-    fun build(activity: Activity, toolbar: Toolbar?,delegate : IActivity): Drawer {
+    fun build(activity: Activity, toolbar: Toolbar?,kaiActivity : IKaiActivity): Drawer {
         val newsItem = PrimaryDrawerItem().withName(R.string.news).withIcon(R.drawable.ic_action_news)
         val eventsItem = PrimaryDrawerItem().withName(R.string.events).withIcon(R.drawable.ic_action_knight)
         val legendaryItem = PrimaryDrawerItem().withName(R.string.legendarycraft).withIcon(R.drawable.ic_action_knight)

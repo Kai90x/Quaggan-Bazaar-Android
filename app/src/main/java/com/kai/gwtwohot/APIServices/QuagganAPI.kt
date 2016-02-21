@@ -12,9 +12,9 @@ import rx.Observable
 interface QuagganAPI {
 
     @GET("/news")
-    fun news(@Query("page") page: Int,@Query("batch_size") batch_size: Int = 50): Observable<List<QuagganJson<News>>>
+    fun news(@Query("page") page: Int,@Query("batch_size") batch_size: Int = 50): Observable<QuagganJson<News>>
 
     companion object {
-        val BaseURL = "http://quagganbazaarapi.kai-mx.net"
+       const val BaseURL = "http://quagganbazaarapi.kai-mx.net"
     }
 }
