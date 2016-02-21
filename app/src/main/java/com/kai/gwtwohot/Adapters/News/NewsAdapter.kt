@@ -10,7 +10,7 @@ import com.kai.gwtwohot.R
 /**
  * Created by ikraammoothianpillay1 on 2/20/16.
  */
-class NewsAdapter(protected var context: Context,protected var newsInfoList: MutableList<NewsInfo> ) : BaseAdapter<NewsInfo>(newsInfoList) {
+class NewsAdapter(protected var context: Context) : BaseAdapter<NewsInfo>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.news_item, parent, false)

@@ -2,6 +2,7 @@ package com.kai.gwtwohot.Fragments
 
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.kai.gwtwohot.APIServices.QuagganAPI
@@ -24,7 +25,7 @@ import rx.schedulers.Schedulers
 class NewsFragment : BaseFeedFragment(), SwipeRefreshLayout.OnRefreshListener, OnMoreListener {
 
     private var newsAdapter: NewsAdapter? = null
-    private var list: MutableList<NewsInfo>? = null
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         //setToolBarSubTitle(getString(R.string.news))
@@ -33,9 +34,9 @@ class NewsFragment : BaseFeedFragment(), SwipeRefreshLayout.OnRefreshListener, O
         recyclerList?.setRefreshListener(this)
         recyclerList?.setRefreshingColorResources(android.R.color.holo_orange_light, android.R.color.holo_blue_light, android.R.color.holo_green_light, android.R.color.holo_red_light)
 
-        newsAdapter = NewsAdapter(this.context,list)
+        newsAdapter = NewsAdapter(activity.applicationContext)
         recyclerList?.adapter = newsAdapter
-        if (NetworkUtils.isNetworkAvailable(activity) && recyclerList!!.adapter == null) {
+        if (NetworkUtils.isNetworkAvailable(activity)) {
             getNewsFeed()
         } else {
             recyclerList!!.visibility = View.GONE
@@ -46,7 +47,7 @@ class NewsFragment : BaseFeedFragment(), SwipeRefreshLayout.OnRefreshListener, O
     private fun getNewsFeed() {
         if (NetworkUtils.isNetworkAvailable(activity)) {
             val service = RetrofitFactory.createService(QuagganAPI::class.java, QuagganAPI.BaseURL)
-            service.news(1, 1).subscribeOn(Schedulers.newThread())
+            service.news(currentpage).subscribeOn(Schedulers.newThread())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(object : Subscriber<QuagganJson<News>>() {
 
@@ -56,6 +57,7 @@ class NewsFragment : BaseFeedFragment(), SwipeRefreshLayout.OnRefreshListener, O
 
                     override fun onError(e: Throwable) {
                         stopRecyclerViewLoad()
+                        Log.e("Error",e.message)
                     }
 
                     override fun onNext(newJson: QuagganJson<News>) {
@@ -71,6 +73,7 @@ class NewsFragment : BaseFeedFragment(), SwipeRefreshLayout.OnRefreshListener, O
                             //ni.author = if (article. == null) " - " else article.creator
                             //ni.date = if (article.publish_date) " - " else Helper.convertUTCToLocalTime(article.publish_date!!, dtf)
                             ni.link = article.link
+                            Log.d("test",article.title)
 
                             newsAdapter?.add(ni)
                         }

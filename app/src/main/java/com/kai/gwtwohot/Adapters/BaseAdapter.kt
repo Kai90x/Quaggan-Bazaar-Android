@@ -3,12 +3,14 @@ package com.kai.gwtwohot.Adapters
 import android.view.ViewGroup
 import com.kai.gwtwohot.Adapters.BaseViewHolder
 import com.malinskiy.superrecyclerview.swipe.BaseSwipeAdapter
+import java.util.*
 
 /**
  * Created by ikraammoothianpillay1 on 2/20/16.
  */
-abstract class BaseAdapter<T>(protected var items: MutableList<T>)
+abstract class BaseAdapter<T>()
 : BaseSwipeAdapter<BaseViewHolder<T>>() {
+    protected var items: MutableList<T> = ArrayList()
 
     fun add(item: T) {
         this.items.add(item)

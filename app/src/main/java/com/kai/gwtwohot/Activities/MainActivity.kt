@@ -7,6 +7,7 @@ import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.widget.Toast
+import com.kai.gwtwohot.Fragments.NewsFragment
 import com.kai.gwtwohot.R
 import com.kai.gwtwohot.Utils.DrawerUtils
 
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity(), IKaiActivity {
         setContentView(R.layout.activity_main)
         pref = PreferenceManager.getDefaultSharedPreferences(this)
         if (savedInstanceState == null) {
+            setFragment(NewsFragment())
         }
 
         myToolbar = findViewById(R.id.tool_bar) as Toolbar
@@ -31,7 +33,7 @@ class MainActivity : AppCompatActivity(), IKaiActivity {
         DrawerUtils.build(this,myToolbar,this)
     }
 
-    public override fun setFragment(fragment: Fragment) {
+    override fun setFragment(fragment: Fragment) {
         fragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
     }
 

@@ -1,7 +1,7 @@
 package com.kai.gwtwohot.Fragments
 
+import android.app.Fragment
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +11,7 @@ import com.malinskiy.superrecyclerview.SuperRecyclerView
 
 abstract class BaseFeedFragment : Fragment() {
     protected var recyclerList: SuperRecyclerView? = null
-    protected var batchSize: Int = 0
+    protected var batchSize: Int = 25
     protected var currentpage: Int = 1
     protected var totalBatches: Int = 0
 
@@ -29,7 +29,7 @@ abstract class BaseFeedFragment : Fragment() {
 
     private fun initRecycler() {
         if (recyclerList != null) {
-            val layout = GridLayoutManager(activity,1)
+            val layout = GridLayoutManager(activity,2)
             recyclerList?.setLayoutManager(layout)
         }
     }

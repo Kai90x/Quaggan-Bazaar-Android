@@ -3,6 +3,7 @@ package com.kai.gwtwohot.Adapters.News
 import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import com.kai.gwtwohot.Adapters.BaseViewHolder
 import com.kai.gwtwohot.R
@@ -18,7 +19,7 @@ class NewsViewHolder(itemView: View) : BaseViewHolder<NewsInfo>(itemView) {
     protected var vAuthor: TextView
     protected var vDate: TextView
     protected var vLink: TextView
-    protected var vItemLayout: LinearLayout
+    protected var vItemLayout: RelativeLayout
     protected var vlAuthor: TextView
     protected var vlDate: TextView
 
@@ -31,7 +32,7 @@ class NewsViewHolder(itemView: View) : BaseViewHolder<NewsInfo>(itemView) {
         vLink = itemView.findViewById(R.id.txtlink) as TextView
         vlAuthor = itemView.findViewById(R.id.lblAuthor) as TextView
         vlDate = itemView.findViewById(R.id.lblDate) as TextView
-        vItemLayout = itemView.findViewById(R.id.itemLayout) as LinearLayout
+        vItemLayout = itemView.findViewById(R.id.itemLayout) as RelativeLayout
         vItemLayout.setOnClickListener(this)
     }
 
