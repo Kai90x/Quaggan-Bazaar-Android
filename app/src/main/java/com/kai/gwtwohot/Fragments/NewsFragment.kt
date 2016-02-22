@@ -39,7 +39,7 @@ class NewsFragment : BaseFeedFragment(), SwipeRefreshLayout.OnRefreshListener, O
         if (NetworkUtils.isNetworkAvailable(activity)) {
             getNewsFeed()
         } else {
-            recyclerList!!.visibility = View.GONE
+            recyclerList?.visibility = View.GONE
             //showErrorMessage(getString(R.string.dialog_no_network))
         }
     }
@@ -47,12 +47,12 @@ class NewsFragment : BaseFeedFragment(), SwipeRefreshLayout.OnRefreshListener, O
     private fun getNewsFeed() {
         if (NetworkUtils.isNetworkAvailable(activity)) {
             val service = RetrofitFactory.createService(QuagganAPI::class.java, QuagganAPI.BaseURL)
-            service.news(currentpage).subscribeOn(Schedulers.newThread())
+            service.news(currentpage,5).subscribeOn(Schedulers.newThread())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(object : Subscriber<QuagganJson<News>>() {
 
                     override fun onCompleted() {
-                        stopRecyclerViewLoad()
+                        //stopRecyclerViewLoad()
                     }
 
                     override fun onError(e: Throwable) {
@@ -64,16 +64,15 @@ class NewsFragment : BaseFeedFragment(), SwipeRefreshLayout.OnRefreshListener, O
                         totalBatches = newJson.data?.batch?.total!!
                         currentpage = newJson.data?.batch?.current!!
 
-                        val ni = NewsInfo()
                         var articles = newJson.data?.details?.data as List<News>
 
                         for(article in articles) {
+                            val ni = NewsInfo()
                             ni.title = article.title
                             ni.summary = article.description
-                            //ni.author = if (article. == null) " - " else article.creator
+                            ni.author = if (article.creator == null) " - " else article.creator
                             //ni.date = if (article.publish_date) " - " else Helper.convertUTCToLocalTime(article.publish_date!!, dtf)
                             ni.link = article.link
-                            Log.d("test",article.title)
 
                             newsAdapter?.add(ni)
                         }

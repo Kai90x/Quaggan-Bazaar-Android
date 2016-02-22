@@ -13,18 +13,18 @@ import java.util.concurrent.TimeUnit
  */
 object RetrofitFactory {
     public fun <T> createService(clazz: Class<T>, endPoint: String): T {
-        var builder = OkHttpClient().newBuilder();
-        builder.readTimeout(10, TimeUnit.SECONDS);
-        builder.connectTimeout(5, TimeUnit.SECONDS);
-
-            var interceptor = HttpLoggingInterceptor();
-            interceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
-            builder.addInterceptor(interceptor);
-        var client = builder.build();
+//        var builder = OkHttpClient().newBuilder();
+//        builder.readTimeout(10, TimeUnit.SECONDS);
+//        builder.connectTimeout(5, TimeUnit.SECONDS);
+//
+//        var interceptor = HttpLoggingInterceptor();
+//        interceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
+//        builder.addInterceptor(interceptor);
+//        var client = builder.build();
         val restAdapter = Retrofit.Builder().baseUrl(endPoint)
                 .addConverterFactory(JacksonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .client(client)
+//                .client(client)
                 .build()
         return restAdapter.create(clazz)
     }

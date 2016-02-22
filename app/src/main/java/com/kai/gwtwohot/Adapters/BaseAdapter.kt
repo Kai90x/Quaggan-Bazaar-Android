@@ -1,7 +1,9 @@
 package com.kai.gwtwohot.Adapters
 
+import android.util.Log
 import android.view.ViewGroup
 import com.kai.gwtwohot.Adapters.BaseViewHolder
+import com.kai.gwtwohot.Adapters.News.NewsInfo
 import com.malinskiy.superrecyclerview.swipe.BaseSwipeAdapter
 import java.util.*
 
@@ -10,7 +12,7 @@ import java.util.*
  */
 abstract class BaseAdapter<T>()
 : BaseSwipeAdapter<BaseViewHolder<T>>() {
-    protected var items: MutableList<T> = ArrayList()
+    protected var items: MutableList<T> = ArrayList<T>()
 
     fun add(item: T) {
         this.items.add(item)
@@ -20,6 +22,11 @@ abstract class BaseAdapter<T>()
     fun add(items: List<T>) {
         this.items.addAll(items)
         notifyItemInserted(this.items.size - 1)
+    }
+
+    fun remove(item: T) {
+        this.items.remove(item)
+        notifyItemInserted(items.size - 1)
     }
 
     fun clear() {
