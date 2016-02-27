@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity(), IKaiActivity {
         setContentView(R.layout.activity_main)
         pref = PreferenceManager.getDefaultSharedPreferences(this)
         if (savedInstanceState == null) {
-            setFragment(NewsFragment())
+            setFragment(NewsFragment.Companion.newInstance())
         }
 
         myToolbar = findViewById(R.id.tool_bar) as Toolbar
