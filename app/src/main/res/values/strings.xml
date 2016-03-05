@@ -26,6 +26,7 @@
     <string name="action_clear">Clear All</string>
 
     <!--Item Types-->
+    <string name="items">Items</string>
     <string name="item_types">Item Types</string>
 
     <string name="item_all">All</string>
@@ -188,9 +189,9 @@
     <string name="account_pvp_stats">PVP Stats</string>
     <string name="account_pvp_games">PVP Games</string>
     <string name="account_material">Material</string>
-    <string name="account_favorite_items">Favorite Items</string>
+    <string name="favorite_items">Favorite Items</string>
     <string name="account_my_character">My Characters</string>
-    <string name="account_my_currenct_transactions">Current Transactions</string>
+    <string name="account_my_current_transactions">Current Transactions</string>
     <string name="account_history_transactions">Transactions History</string>
 
     <!--Preference-->
@@ -518,8 +519,8 @@
     <string name="banner_ad_unit_id">ca-app-pub-1856321092794483/6982333458</string>
 
     <string name="helping_quote1">No man stands so straight as when he stoops to help a child</string>
-    <string name="save_a_child">Child Fund</string>
-    <string name="Kai">Kai</string>
+    <string name="child_fund">Child Fund</string>
+    <string name="kai">Kai</string>
     <string name="save_child_url">https://www.childfund.org/Give_Now/</string>
     <string name="donation">Donation</string>
     <string name="later">Later</string>
@@ -624,6 +625,4 @@
 
     <string name="action_settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

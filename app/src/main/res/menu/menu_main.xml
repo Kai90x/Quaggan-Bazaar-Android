@@ -5,30 +5,8 @@
     <item
         android:id="@+id/action_notify"
         android:title="@string/action_notify"/>
-
-    <item
-        android:id="@+id/action_search"
-        android:icon="@android:drawable/ic_menu_search"
-        app:showAsAction="always"
-        app:actionViewClass="android.support.v7.widget.SearchView"
-        android:title="@string/search"/>
-
-    <item
-        android:id="@+id/action_orderAscOrDesc"
-        android:title="@string/action_orderAsc"
-        app:showAsAction="always"
-        android:icon="@drawable/ic_action_arrow_top"/>
     
     <group android:id="@+id/group_menu">
-        <item
-            android:id="@+id/action_advance_search"
-            android:title="@string/search_title" />
-        <item
-            android:id="@+id/action_subtype"
-            android:title="@string/action_subtype" />
-        <item
-            android:id="@+id/action_orderby"
-            android:title="@string/action_orderby" />
         <item
             android:id="@+id/action_clear"
             android:title="@string/action_clear" />
@@ -43,7 +21,7 @@
 
     <item
         android:id="@+id/action_addApiKey"
-        android:icon="@drawable/ic_action_add"
+        android:icon="@drawable/gw_add"
         app:showAsAction="always"
         android:title="@string/action_addApiKey"/>
 

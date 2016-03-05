@@ -18,14 +18,17 @@
                 android:id="@+id/txtTitle"
                 android:layout_alignParentTop="true"
                 android:text="Title"
-                android:textColor="@color/GuildMainColor"
-                android:textSize="25sp" />
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="@dimen/abc_text_size_title_material" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtSummary"
+                android:textColor="@color/secondary_text"
                 android:text="Summary"
+                android:textSize="@dimen/abc_text_size_body_2_material"
                 android:layout_below="@+id/txtTitle" />
 
             <LinearLayout
@@ -46,11 +49,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/lblAuthor"
+                        android:textStyle="bold"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/abc_text_size_caption_material"
                         android:text="@string/news_author"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/abc_text_size_caption_material"
                         android:id="@+id/txtAuthor"/>
 
                 </LinearLayout>
@@ -66,12 +74,16 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/lblDate"
                         android:text="@string/news_date"
-                        android:layout_weight="0.5" />
+                        android:textSize="@dimen/abc_text_size_caption_material"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtDate"
+                        android:textSize="@dimen/abc_text_size_caption_material"
+                        android:textColor="@color/secondary_text"
                         android:layout_weight="0.5"/>
 
                 </LinearLayout>

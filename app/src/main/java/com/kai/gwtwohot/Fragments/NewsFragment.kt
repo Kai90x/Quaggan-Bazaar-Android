@@ -15,6 +15,7 @@ import com.kai.gwtwohot.Factory.RetrofitFactory
 import com.kai.gwtwohot.R
 import com.kai.gwtwohot.Serialization.QuagganApi.News.News
 import com.kai.gwtwohot.Serialization.QuagganApi.QuagganJson
+import com.kai.gwtwohot.Utils.DateUtils
 import com.kai.gwtwohot.Utils.NetworkUtils
 import com.malinskiy.superrecyclerview.OnMoreListener
 import com.malinskiy.superrecyclerview.SuperRecyclerView
@@ -32,18 +33,20 @@ import rx.schedulers.Schedulers
 class NewsFragment : BaseFeedFragment<NewsInfo>() {
 
     override fun callApi() {
+        startProgress()
         val service = RetrofitFactory.createService(QuagganAPI::class.java, QuagganAPI.BaseURL)
-        service.news(currentpage,5).subscribeOn(Schedulers.newThread())
+        service.news(currentpage,batchSize).subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(object : Subscriber<QuagganJson<News>>() {
 
                 override fun onCompleted() {
-                    //stopRecyclerViewLoad()
+                    endProgress()
                 }
 
                 override fun onError(e: Throwable) {
-                    stopRecyclerViewLoad()
-                    Log.e("Error",e.message)
+                    endProgress()
+                    //TODO: Show snackbar to email error
+                    e.printStackTrace();
                 }
 
                 override fun onNext(newJson: QuagganJson<News>) {
@@ -57,7 +60,7 @@ class NewsFragment : BaseFeedFragment<NewsInfo>() {
                         ni.title = article.title
                         ni.summary = article.description
                         ni.author = if (article.creator == null) " - " else article.creator
-                        //ni.date = if (article.publish_date) " - " else Helper.convertUTCToLocalTime(article.publish_date!!, dtf)
+                        ni.date = DateUtils.toLocalDate(article.publish_date!!)
                         ni.link = article.link
                         mAdapter?.add(ni)
                     }
@@ -70,7 +73,7 @@ class NewsFragment : BaseFeedFragment<NewsInfo>() {
     }
 
     companion object {
-        public fun newInstance() : NewsFragment {
+        fun newInstance() : NewsFragment {
             val feedFrag = NewsFragment()
             return feedFrag
         }

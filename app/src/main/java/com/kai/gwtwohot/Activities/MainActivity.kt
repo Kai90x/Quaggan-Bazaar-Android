@@ -25,10 +25,8 @@ class MainActivity : AppCompatActivity(), IKaiActivity {
             setFragment(NewsFragment.Companion.newInstance())
         }
 
-        myToolbar = findViewById(R.id.tool_bar) as Toolbar
-        if (myToolbar != null) {
-            setSupportActionBar(myToolbar)
-        }
+        myToolbar = findViewById(R.id.toolbar) as Toolbar
+        setSupportActionBar(myToolbar)
 
         DrawerUtils.build(this,myToolbar,this)
     }
