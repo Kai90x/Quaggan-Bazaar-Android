@@ -13,15 +13,7 @@
         app:recyclerClipToPadding="false"
         app:scrollbarStyle="insideInset"/>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:max="500"
-        android:progress="0"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:progressDrawable="@drawable/circular" />
+    <include layout="@layout/progress_layout"/>
+    <include layout="@layout/error_layout"/>
 
 </RelativeLayout>

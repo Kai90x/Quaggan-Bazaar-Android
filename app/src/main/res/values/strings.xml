@@ -194,7 +194,7 @@
     <string name="account_my_current_transactions">Current Transactions</string>
     <string name="account_history_transactions">Transactions History</string>
 
-    <!--Preference-->
+    <!--Quaggan Bazaar-->
     <string name="preference">Preference</string>
     <string name="preference_setting">Setting</string>
     <string name="preference_credit">Credit</string>
@@ -284,11 +284,13 @@
     <string name="dialog_email_error">Email could not be sent</string>
     <string name="dialog_api_dialog_title">Enter your API</string>
     <string name="dialog_waitfortask">Please wait for the current task to complete first</string>
-    <string name="dialog_no_network">No network found</string>
+    <string name="dialog_no_network">No internet connection found</string>
     <string name="dialog_invalid">Invalid url provided</string>
     <string name="dialog_noItemsFound">No Items Found</string>
     <string name="dialog_server_error">Oh god i hate this server T-T</string>
-    <string name="dialog_error_occured">Sorry, an error has occured while fetching your data. Do you want to send a report?</string>
+    <string name="dialog_error_occured_1">Sorry, an error has occurred while fetching your data. Do you want to send a report?</string>
+    <string name="dialog_error_occured_2">Sorry, an error has occurred while fetching your data.</string>
+    <string name="dialog_error_occured_3">An error has occurred. Would you like to send a report?</string>
     <string name="dialog_api_check">Validating API Key</string>
     <string name="dialog_api_invalid">Invalid API Key entered</string>
     <string name="dialog_api_error_retrieval">Sorry an error has occurred and the selected api key could not be retrieved</string>
@@ -624,5 +626,8 @@
     <string name="items_found_detailed">- {0} found in {1}</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- Error View-->
+    <string name="retry">Retry</string>
 
 </resources>

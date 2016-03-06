@@ -1,0 +1,21 @@
+<resources>
+
+    <dimen name="padding_tiny">5dp</dimen>
+    <dimen name="padding_small">7dp</dimen>
+    <dimen name="padding_medium">11dp</dimen>
+    <dimen name="padding_large">15dp</dimen>
+    <dimen name="padding_xlarge">20dp</dimen>
+    <dimen name="padding_xxlarge">22dp</dimen>
+    <dimen name="padding_xxxlarge">24dp</dimen>
+
+    <dimen name="margin_tiny">6dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">11dp</dimen>
+    <dimen name="margin_large">14dp</dimen>
+    <dimen name="margin_xlarge">17dp</dimen>
+
+    <dimen name="line_large">4dp</dimen>
+
+    <dimen name="contact_apps">50dp</dimen>
+
+</resources>

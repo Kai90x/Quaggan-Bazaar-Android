@@ -71,7 +71,7 @@ object DrawerUtils {
                         kaiHeader,childFund
                     ).withOnDrawerItemClickListener { view, position, drawerItem ->
                         when(drawerItem) {
-                            newsItem -> kaiActivity.setFragment(NewsFragment.newInstance())
+                            newsItem -> kaiActivity.setFragment(NewsFragment.newInstance(kaiActivity))
                         }
 
                     false

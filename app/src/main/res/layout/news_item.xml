@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/transparent"
+    android:background="@drawable/card_background"
+    android:layout_margin="@dimen/margin_medium"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -35,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="10dp"
+                android:paddingTop="@dimen/padding_medium"
                 android:weightSum="1"
                 android:layout_below="@+id/txtSummary">
 
@@ -76,24 +77,20 @@
                         android:text="@string/news_date"
                         android:textSize="@dimen/abc_text_size_caption_material"
                         android:textColor="@color/secondary_text"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_gravity="right" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtDate"
                         android:textSize="@dimen/abc_text_size_caption_material"
+                        android:layout_gravity="right"
                         android:textColor="@color/secondary_text"
                         android:layout_weight="0.5"/>
 
                 </LinearLayout>
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/txtlink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"/>
         </RelativeLayout>
 
 </LinearLayout>
