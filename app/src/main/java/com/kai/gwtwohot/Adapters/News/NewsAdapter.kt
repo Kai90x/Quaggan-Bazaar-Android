@@ -15,7 +15,7 @@ import com.kai.gwtwohot.R
 class NewsAdapter(protected var activity: IKaiActivity) : BaseAdapter<NewsInfo>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
-        return NewsViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.news_item, parent, false),activity)
+        return NewsViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.news_row, parent, false),activity)
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<NewsInfo>, position: Int) {

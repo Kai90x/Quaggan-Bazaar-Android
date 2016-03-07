@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent"
+    android:padding="@dimen/padding_tiny"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="@android:dimen/app_icon_size"
+            android:layout_height="@android:dimen/app_icon_size"
+            android:id="@+id/imgBoss"
+            android:src="@android:drawable/gallery_thumb"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtBossName"
+            android:text="Boss Name"
+            android:textColor="@color/GuildMainColor"
+            android:textStyle="bold"
+            android:textSize="@dimen/abc_text_size_body_2_material"
+            android:paddingLeft="@dimen/padding_small"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imgBoss"
+            android:layout_toEndOf="@+id/imgBoss" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtLocation"
+        android:text="Location"
+        android:textSize="@dimen/abc_text_size_caption_material"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:paddingLeft="@dimen/padding_small"
+        android:layout_below="@+id/txtBossName"
+        android:layout_toRightOf="@+id/imgBoss"
+        android:layout_toEndOf="@+id/imgBoss" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTime"
+            android:text="UTC Time"
+            android:textSize="@dimen/abc_text_size_caption_material"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text"
+        android:paddingLeft="@dimen/padding_small"
+        android:layout_below="@+id/txtLocation"
+        android:layout_alignLeft="@+id/txtBossName"
+        android:layout_alignStart="@+id/txtBossName" />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtActive"
+            android:text="@string/active"
+            android:visibility="gone"
+            android:textColor="@color/GuildMainColor"
+            android:textStyle="bold"
+            android:textSize="@dimen/abc_text_size_body_2_material"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    <View style="@style/Divider"
+        android:id="@+id/divider"
+        android:layout_marginTop="@dimen/margin_tiny"
+        android:layout_width="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

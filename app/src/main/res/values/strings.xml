@@ -203,7 +203,7 @@
     <string name="preference_adsfree">Ads-Free</string>
     <string name="choose_one">Choose One:</string>
     <string name="recommend_text">\nLet me recommend you this app\n\n</string>
-    <string name="google_play_link">https://play.google.com/store/apps/details?id=com.kai.guildwarsv2\n\n</string>
+    <string name="google_play_link">https://play.google.com/store/apps/details?id=com.kai.gwtwohot\n\n</string>
 
     <!--Urls-->
     <string name="url_base">http://quagganbazaarapi.kai-mx.net</string>
@@ -235,7 +235,7 @@
     <string name="url_v2_pvpstats">/pvp/stats</string>
     <string name="url_v2_pvpgames">/pvp/games</string>
     <string name="url_kai_quaggans">http://www.kai-mx.net/wp-content/uploads/GuildWarsV2/quaggans/{quaggan}.jpg</string>
-    <string name="url_kai_boss">http://www.kai-mx.net/wp-content/uploads/GuildWarsV2/boss/{boss}.jpg</string>
+    <string name="url_kai_boss">http://www.kai-mx.net/wp-content/uploads/GuildWarsV2/boss/%s.jpg</string>
     <string name="url_kai_price_update">/prices/Guild/Sync/Update/</string>
     <string name="url_kai_dungeons">/dungeons</string>
     <string name="url_kai_craft">/crafting</string>
@@ -603,7 +603,6 @@
     <string name="adsfree">Ads-Free Version</string>
     <string name="proceed">Proceed</string>
     <string name="adsfree_redirect">You will be redirected to the amazon store for the paid version</string>
-    <string name="amazon_link">http://www.amazon.com/KAI-Dragon-Thorns/dp/B016F6VQXW</string>
 
     <string name="donate_app">App Donation</string>
     <string name="donate_invalid_amount">Invalid amount has been entered</string>

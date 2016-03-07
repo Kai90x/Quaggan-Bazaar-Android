@@ -1,9 +1,12 @@
 package com.kai.gwtwohot.Serialization.QuagganApi
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+
 /**
  * Created by ikraammoothianpillay1 on 2/20/16.
  */
-public class QuagganJson<T>
+@JsonIgnoreProperties(ignoreUnknown = true)
+class QuagganJson<T>
 {
-    public var data: Data<T>? = null;
+    var data: Data<T>? = null;
 }

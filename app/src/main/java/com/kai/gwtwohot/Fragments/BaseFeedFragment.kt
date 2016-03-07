@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import com.kai.gwtwohot.Activities.MainActivity
 import com.kai.gwtwohot.Adapters.BaseAdapter
+import com.kai.gwtwohot.Extensions.*
 import com.kai.gwtwohot.R
 import com.kai.gwtwohot.Utils.NetworkUtils
 import com.malinskiy.superrecyclerview.OnMoreListener
@@ -27,25 +29,33 @@ abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefres
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater!!.inflate(R.layout.fragment_list, container, false)
+
         recyclerList = rootView.findViewById(R.id.fragment_list) as SuperRecyclerView
         errorView = rootView.findViewById(R.id.errorView) as ErrorView
         progress = rootView.findViewById(R.id.progressBar) as ProgressBar
-        mAdapter = initAdapter()
-        initRecycler()
 
         rootView.circularReveal()
-
         return rootView
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        kaiActivity = if (activity is MainActivity) this.activity as MainActivity else null
+        mAdapter = initAdapter()
+        initRecycler()
     }
 
     private fun initRecycler() {
         if (recyclerList != null) {
-            val layout = LinearLayoutManager(activity!!.getContext())
+            val layout = LinearLayoutManager(kaiActivity!!.getContext())
             recyclerList?.setLayoutManager(layout)
 
-            recyclerList?.setupMoreListener(this, 2)
-            recyclerList?.setRefreshListener(this)
-            recyclerList?.setRefreshingColorResources(android.R.color.holo_orange_light, android.R.color.holo_blue_light, android.R.color.holo_green_light, android.R.color.holo_red_light)
+            if (shouldLoadMore())
+                recyclerList?.setupMoreListener(this, 2)
+            if (shouldRefresh()) {
+                recyclerList?.setRefreshListener(this)
+                recyclerList?.setRefreshingColorResources(android.R.color.holo_orange_light, android.R.color.holo_blue_light, android.R.color.holo_green_light, android.R.color.holo_red_light)
+            }
 
             recyclerList?.adapter = mAdapter
 
@@ -54,7 +64,7 @@ abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefres
     }
 
     protected  fun startProgress() {
-        if (mAdapter?.itemCount == 0) {
+        if (mAdapter?.isEmpty()!!) {
             recyclerList?.hideMoreProgress()
             progress?.start()
         }
@@ -85,13 +95,18 @@ abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefres
 
     private fun getFeed() {
         if (getDataFromAPI) {
-            if (NetworkUtils.isNetworkAvailable(activity!!.getContext())) {
+            if (NetworkUtils.isNetworkAvailable(kaiActivity!!.getContext())) {
                 callApi()
             } else
                 showErrorView(R.string.dialog_no_network)
+        } else {
+            getOfflineData()
         }
     }
 
     abstract fun callApi()
+    abstract fun getOfflineData()
     abstract fun initAdapter() : BaseAdapter<T>
+    abstract fun shouldLoadMore() : Boolean
+    abstract fun shouldRefresh() : Boolean
 }

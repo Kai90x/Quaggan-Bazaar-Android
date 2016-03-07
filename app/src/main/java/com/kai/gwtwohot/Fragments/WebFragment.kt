@@ -1,14 +1,18 @@
 package com.kai.gwtwohot.Fragments
 
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ProgressBar
-import com.kai.gwtwohot.Activities.IKaiActivity
+import com.kai.gwtwohot.Extensions.circularReveal
+import com.kai.gwtwohot.Extensions.show
+import com.kai.gwtwohot.Extensions.start
+import com.kai.gwtwohot.Extensions.stop
 import com.kai.gwtwohot.R
 import com.kai.gwtwohot.Utils.NetworkUtils
 import tr.xip.errorview.ErrorView
@@ -31,17 +35,30 @@ class WebFragment : BaseFragment() {
         progress = rootView.findViewById(R.id.progressBar) as ProgressBar
 
         rootView?.circularReveal()
-        setToolbarSubtitleTitle(title!!)
-
-        loadUrl()
         return rootView
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        if (arguments != null) {
+            link = arguments.getString(LINK)
+            setToolbarSubtitleTitle(arguments.getString(TITLE))
+        }
+
+        loadUrl()
+    }
+
     private fun loadUrl() {
-        if (!NetworkUtils.isNetworkAvailable(activity!!.getContext())) {
+        if (!NetworkUtils.isNetworkAvailable(kaiActivity!!.getContext())) {
             errorView?.show(R.string.dialog_no_network, { loadUrl()})
         } else if (link != null) {
             webView?.setWebViewClient(object : WebViewClient() {
+                override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                    super.onPageStarted(view, url, favicon)
+                    progress?.start()
+                }
+
                 override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
                     progress?.start()
                     return true
@@ -59,11 +76,15 @@ class WebFragment : BaseFragment() {
     }
 
     companion object {
-        fun newInstance(activity: IKaiActivity,link: String,title: String) : WebFragment {
+        val LINK: String = "link"
+        val TITLE: String = "title"
+
+        fun newInstance(link: String,title: String) : WebFragment {
             val frag = WebFragment()
-            frag.activity = activity
-            frag.link = link
-            frag.title = title
+            val args = Bundle()
+            args.putString(LINK, link)
+            args.putString(TITLE, title)
+            frag.arguments = args
             return frag
         }
     }

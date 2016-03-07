@@ -11,7 +11,7 @@ import com.kai.gwtwohot.R
 /**
  * Created by ikraammoothianpillay1 on 2/20/16.
  */
-class NewsViewHolder(itemView: View,_activity: IKaiActivity) : BaseViewHolder<NewsInfo>(itemView,_activity) {
+class NewsViewHolder(itemView: View,kaiActivity: IKaiActivity) : BaseViewHolder<NewsInfo>(itemView,kaiActivity) {
 
     protected var vTitle: TextView
     protected var vSummary: TextView
@@ -42,6 +42,6 @@ class NewsViewHolder(itemView: View,_activity: IKaiActivity) : BaseViewHolder<Ne
     }
 
     override fun onClick(view: View) {
-        activity.setFragment(WebFragment.newInstance(activity,link!!,vTitle.text.toString()),true)
+        kaiActivity.setFragment(WebFragment.newInstance(link!!,vTitle.text.toString()),true)
     }
 }

@@ -14,16 +14,16 @@ object EventRepository {
         getEventDao(context).insertOrReplace(event)
     }
 
-    fun clearEvents(context: Context) {
+    fun clear(context: Context) {
         getEventDao(context).deleteAll()
     }
 
-    fun deleteEventWithId(context: Context, id: Long) {
-        getEventDao(context).delete(getEventById(context, id))
+    fun deleteById(context: Context, id: Long) {
+        getEventDao(context).delete(get(context, id))
     }
 
 
-    fun getEventsbyName(context: Context, boss: String): List<Event>? {
+    fun get(context: Context, boss: String): List<Event>? {
         val qb = getEventDao(context).queryBuilder()
         qb.where(EventDao.Properties.Boss.eq(boss)).orderAsc(EventDao.Properties.Spawntime_utc_minutes)
         val events = qb.list()
@@ -33,7 +33,7 @@ object EventRepository {
         return null
     }
 
-    fun getEventsWithingRange(context: Context, start: Int, end: Int): List<Event>? {
+    fun get(context: Context, start: Int, end: Int): List<Event>? {
         val qb = getEventDao(context).queryBuilder()
         qb.where(qb.and(EventDao.Properties.Spawntime_utc_minutes.ge(start), EventDao.Properties.Spawntime_utc_minutes.le(end)))
         val events = qb.list()
@@ -43,7 +43,7 @@ object EventRepository {
         return null
     }
 
-    fun getNextEvents(context: Context, time: Int): List<Event>? {
+    fun get(context: Context, time: Int): List<Event>? {
         val qb = getEventDao(context).queryBuilder()
         qb.where(qb.or(EventDao.Properties.Spawntime_utc_minutes.ge(time), EventDao.Properties.Spawntime_utc_minutes.eq(time))).orderAsc(EventDao.Properties.Spawntime_utc_minutes)
 
@@ -54,12 +54,16 @@ object EventRepository {
         return null
     }
 
-    fun getEventById(context: Context, id: Long): Event {
+    fun get(context: Context, id: Long): Event {
         return getEventDao(context).load(id)
     }
 
-    fun getAllEventDao(context: Context): List<Event> {
+    fun get(context: Context): List<Event> {
         return getEventDao(context).loadAll()
+    }
+
+    fun hasAny(context: Context): Boolean {
+        return getEventDao(context).count() > 0
     }
 
     private fun getEventDao(c: Context): EventDao {

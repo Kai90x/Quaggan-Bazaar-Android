@@ -1,11 +1,13 @@
 package com.kai.gwtwohot.Activities
 
+import android.app.Activity
 import android.app.Fragment
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.CoordinatorLayout
+import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.widget.Toast
@@ -30,10 +32,10 @@ class MainActivity : AppCompatActivity(), IKaiActivity {
         myToolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(myToolbar)
 
-        DrawerUtils.build(this,myToolbar,this)
+        DrawerUtils.build(this)
 
         if (savedInstanceState == null) {
-            setFragment(NewsFragment.Companion.newInstance(this))
+            setFragment(NewsFragment.Companion.newInstance())
             supportActionBar?.setTitle(R.string.news)
         }
     }
@@ -45,6 +47,10 @@ class MainActivity : AppCompatActivity(), IKaiActivity {
     }
 
     override fun getContext() : Context {
+        return this
+    }
+
+    override fun getActivity() : AppCompatActivity {
         return this
     }
 

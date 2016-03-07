@@ -63,6 +63,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-ads:8.4.0'
     compile 'com.paypal.sdk:paypal-android-sdk:2.12.4'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.github.clans:fab:1.6.2'
 }
 
 

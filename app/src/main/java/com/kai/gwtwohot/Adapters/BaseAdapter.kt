@@ -24,6 +24,11 @@ abstract class BaseAdapter<T>()
         notifyItemInserted(this.items.size - 1)
     }
 
+    fun update(position: Int,newItem: T) {
+        this.items[position] = newItem
+        notifyItemInserted(items.size - 1)
+    }
+
     fun remove(item: T) {
         this.items.remove(item)
         notifyItemInserted(items.size - 1)
@@ -34,9 +39,9 @@ abstract class BaseAdapter<T>()
         notifyDataSetChanged()
     }
 
-    override fun getItemCount(): Int {
-        return items.size;
-    }
+    override fun getItemCount(): Int = items.size
+
+    fun isEmpty(): Boolean = items.size == 0
 
     abstract override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<T>
     abstract override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int)

@@ -9,11 +9,11 @@ import com.malinskiy.superrecyclerview.swipe.BaseSwipeAdapter.BaseSwipeableViewH
 /**
  * Created by ikraammoothianpillay1 on 2/20/16.
  */
-abstract class BaseViewHolder<T>(itemView: View,activity: IKaiActivity) : BaseSwipeableViewHolder(itemView), View.OnClickListener {
-    var activity: IKaiActivity
+abstract class BaseViewHolder<T>(itemView: View,kaiActivity: IKaiActivity) : BaseSwipeableViewHolder(itemView), View.OnClickListener {
+    var kaiActivity: IKaiActivity
 
     init {
-        this.activity = activity
+        this.kaiActivity = kaiActivity
     }
 
     abstract fun bind(item: T)

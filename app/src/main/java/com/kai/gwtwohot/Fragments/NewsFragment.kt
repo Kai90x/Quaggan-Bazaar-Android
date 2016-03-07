@@ -53,6 +53,9 @@ class NewsFragment : BaseFeedFragment<NewsInfo>() {
                         override fun onError(e: Throwable) {
                             endProgress()
                             showEmailSnackbar(ExceptionUtils.getStackTrace(e))
+                            if (mAdapter?.isEmpty()!!) {
+                                showErrorView(R.string.dialog_error_occured_2)
+                            }
                         }
 
                         override fun onNext(newJson: QuagganJson<News>) {
@@ -77,15 +80,25 @@ class NewsFragment : BaseFeedFragment<NewsInfo>() {
         }
     }
 
+    override fun getOfflineData() {
+    }
+
     override fun initAdapter(): BaseAdapter<NewsInfo> {
-        return NewsAdapter(activity!!)
+        return NewsAdapter(kaiActivity!!)
+    }
+
+    override fun shouldLoadMore(): Boolean {
+        return true
+    }
+
+    override fun shouldRefresh(): Boolean {
+        return true
     }
 
     companion object {
-        fun newInstance(activity: IKaiActivity) : NewsFragment {
-            val feedFrag = NewsFragment()
-            feedFrag.activity = activity
-            return feedFrag
+        fun newInstance() : NewsFragment {
+            val frag = NewsFragment()
+            return frag
         }
     }
 }
