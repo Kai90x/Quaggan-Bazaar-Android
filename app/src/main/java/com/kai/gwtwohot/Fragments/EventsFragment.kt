@@ -52,6 +52,7 @@ class EventsFragment : BaseFeedFragment<EventInfo>() {
                             showEmailSnackbar(ExceptionUtils.getStackTrace(e))
                             if (mAdapter?.isEmpty()!!) {
                                 showErrorView(R.string.dialog_error_occured_2)
+                                fab?.hide(true)
                             }
                         }
 
@@ -116,17 +117,13 @@ class EventsFragment : BaseFeedFragment<EventInfo>() {
         return EventAdapter(kaiActivity!!)
     }
 
-    override fun shouldLoadMore(): Boolean {
-        return false
-    }
+    override fun showFloatingButton() : Boolean = true
 
-    override fun shouldRefresh(): Boolean {
-        return true
-    }
+    override fun shouldLoadMore(): Boolean = false
+
+    override fun shouldRefresh(): Boolean = true
 
     companion object {
-        fun newInstance() : EventsFragment {
-            return EventsFragment()
-        }
+        fun newInstance() : EventsFragment = EventsFragment()
     }
 }

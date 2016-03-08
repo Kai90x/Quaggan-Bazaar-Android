@@ -3,10 +3,12 @@ package com.kai.gwtwohot.Fragments
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import com.github.clans.fab.FloatingActionButton
 import com.kai.gwtwohot.Activities.MainActivity
 import com.kai.gwtwohot.Adapters.BaseAdapter
 import com.kai.gwtwohot.Extensions.*
@@ -18,6 +20,7 @@ import tr.xip.errorview.ErrorView
 
 abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefreshListener, OnMoreListener {
     protected var recyclerList: SuperRecyclerView? = null
+    protected var fab: FloatingActionButton? = null
     protected var errorView: ErrorView? = null
     protected var progress: ProgressBar? = null
     protected var batchSize: Int = 25
@@ -25,6 +28,7 @@ abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefres
     protected var totalBatches: Int = 0
     protected var getDataFromAPI: Boolean = true
     protected var mAdapter: BaseAdapter<T>? = null
+    protected var mScrollOffset: Int = 4;
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -33,6 +37,7 @@ abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefres
         recyclerList = rootView.findViewById(R.id.fragment_list) as SuperRecyclerView
         errorView = rootView.findViewById(R.id.errorView) as ErrorView
         progress = rootView.findViewById(R.id.progressBar) as ProgressBar
+        fab = rootView.findViewById(R.id.fab) as FloatingActionButton
 
         rootView.circularReveal()
         return rootView
@@ -55,6 +60,23 @@ abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefres
             if (shouldRefresh()) {
                 recyclerList?.setRefreshListener(this)
                 recyclerList?.setRefreshingColorResources(android.R.color.holo_orange_light, android.R.color.holo_blue_light, android.R.color.holo_green_light, android.R.color.holo_red_light)
+            }
+
+            if (showFloatingButton()) {
+                recyclerList?.setOnScrollListener(object : RecyclerView.OnScrollListener() {
+                    override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                        super.onScrolled(recyclerView, dx, dy);
+                        if (Math.abs(dy) > mScrollOffset) {
+                            if (dy > 0) {
+                                fab?.hide(true);
+                            } else {
+                                fab?.show(true);
+                            }
+                        }
+                    }
+                });
+            } else  {
+                fab?.hide(true);
             }
 
             recyclerList?.adapter = mAdapter
@@ -103,6 +125,8 @@ abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefres
             getOfflineData()
         }
     }
+
+    protected open fun showFloatingButton() : Boolean = false
 
     abstract fun callApi()
     abstract fun getOfflineData()
