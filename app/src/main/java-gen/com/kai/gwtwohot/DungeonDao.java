@@ -24,8 +24,12 @@ public class DungeonDao extends AbstractDao<Dungeon, Long> {
     */
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
-        public final static Property IdSelected = new Property(1, String.class, "idSelected", false, "ID_SELECTED");
-        public final static Property DateAdded = new Property(2, java.util.Date.class, "dateAdded", false, "DATE_ADDED");
+        public final static Property Dungeon = new Property(1, String.class, "dungeon", false, "DUNGEON");
+        public final static Property Path = new Property(2, String.class, "path", false, "PATH");
+        public final static Property Goldreward = new Property(3, String.class, "goldreward", false, "GOLDREWARD");
+        public final static Property Tokenreward = new Property(4, String.class, "tokenreward", false, "TOKENREWARD");
+        public final static Property IsSelected = new Property(5, boolean.class, "isSelected", false, "IS_SELECTED");
+        public final static Property DateAdded = new Property(6, java.util.Date.class, "dateAdded", false, "DATE_ADDED");
     };
 
 
@@ -42,8 +46,12 @@ public class DungeonDao extends AbstractDao<Dungeon, Long> {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"DUNGEON\" (" + //
                 "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
-                "\"ID_SELECTED\" TEXT NOT NULL ," + // 1: idSelected
-                "\"DATE_ADDED\" INTEGER NOT NULL );"); // 2: dateAdded
+                "\"DUNGEON\" TEXT NOT NULL ," + // 1: dungeon
+                "\"PATH\" TEXT NOT NULL ," + // 2: path
+                "\"GOLDREWARD\" TEXT NOT NULL ," + // 3: goldreward
+                "\"TOKENREWARD\" TEXT NOT NULL ," + // 4: tokenreward
+                "\"IS_SELECTED\" INTEGER NOT NULL ," + // 5: isSelected
+                "\"DATE_ADDED\" INTEGER NOT NULL );"); // 6: dateAdded
     }
 
     /** Drops the underlying database table. */
@@ -61,8 +69,12 @@ public class DungeonDao extends AbstractDao<Dungeon, Long> {
         if (id != null) {
             stmt.bindLong(1, id);
         }
-        stmt.bindString(2, entity.getIdSelected());
-        stmt.bindLong(3, entity.getDateAdded().getTime());
+        stmt.bindString(2, entity.getDungeon());
+        stmt.bindString(3, entity.getPath());
+        stmt.bindString(4, entity.getGoldreward());
+        stmt.bindString(5, entity.getTokenreward());
+        stmt.bindLong(6, entity.getIsSelected() ? 1L: 0L);
+        stmt.bindLong(7, entity.getDateAdded().getTime());
     }
 
     /** @inheritdoc */
@@ -76,8 +88,12 @@ public class DungeonDao extends AbstractDao<Dungeon, Long> {
     public Dungeon readEntity(Cursor cursor, int offset) {
         Dungeon entity = new Dungeon( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
-            cursor.getString(offset + 1), // idSelected
-            new java.util.Date(cursor.getLong(offset + 2)) // dateAdded
+            cursor.getString(offset + 1), // dungeon
+            cursor.getString(offset + 2), // path
+            cursor.getString(offset + 3), // goldreward
+            cursor.getString(offset + 4), // tokenreward
+            cursor.getShort(offset + 5) != 0, // isSelected
+            new java.util.Date(cursor.getLong(offset + 6)) // dateAdded
         );
         return entity;
     }
@@ -86,8 +102,12 @@ public class DungeonDao extends AbstractDao<Dungeon, Long> {
     @Override
     public void readEntity(Cursor cursor, Dungeon entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
-        entity.setIdSelected(cursor.getString(offset + 1));
-        entity.setDateAdded(new java.util.Date(cursor.getLong(offset + 2)));
+        entity.setDungeon(cursor.getString(offset + 1));
+        entity.setPath(cursor.getString(offset + 2));
+        entity.setGoldreward(cursor.getString(offset + 3));
+        entity.setTokenreward(cursor.getString(offset + 4));
+        entity.setIsSelected(cursor.getShort(offset + 5) != 0);
+        entity.setDateAdded(new java.util.Date(cursor.getLong(offset + 6)));
      }
     
     /** @inheritdoc */

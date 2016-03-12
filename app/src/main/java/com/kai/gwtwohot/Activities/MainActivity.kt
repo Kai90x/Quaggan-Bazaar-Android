@@ -10,6 +10,7 @@ import android.support.design.widget.CoordinatorLayout
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
+import android.widget.Spinner
 import android.widget.Toast
 import com.kai.gwtwohot.Fragments.NewsFragment
 import com.kai.gwtwohot.R
@@ -17,6 +18,7 @@ import com.kai.gwtwohot.Utils.DrawerUtils
 
 class MainActivity : AppCompatActivity(), IKaiActivity {
 
+    protected var mySpinner: Spinner? = null
     private var doubleBackToExitPressedOnce: Boolean = false
     private var pref: SharedPreferences? = null
     private var myToolbar: Toolbar? = null
@@ -30,6 +32,8 @@ class MainActivity : AppCompatActivity(), IKaiActivity {
 
         coordinatorLayout = findViewById(R.id.coordinatorLayout) as CoordinatorLayout
         myToolbar = findViewById(R.id.toolbar) as Toolbar
+        mySpinner = findViewById(R.id.toolbarSpinner) as Spinner
+
         setSupportActionBar(myToolbar)
 
         DrawerUtils.build(this)
@@ -56,6 +60,10 @@ class MainActivity : AppCompatActivity(), IKaiActivity {
 
     override fun getToolbar() : Toolbar? {
         return myToolbar
+    }
+
+    override fun getSpinner() : Spinner? {
+        return mySpinner
     }
 
     override fun getCoordinatorLayout() : CoordinatorLayout? {

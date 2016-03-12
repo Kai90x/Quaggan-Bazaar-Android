@@ -47,7 +47,7 @@ object DateUtils {
     }
 
     fun toLocalDate(dateString: String,dateFormat: String = "yyyy-MM-dd HH:mm:ss",
-                            timezone: String = "UTC",dateExportFormat: String = "dd/MM/yyyy hh:mmaa") : String {
+                    timezone: String = "UTC",dateExportFormat: String = "dd/MM/yyyy hh:mmaa") : String {
         val formatter = SimpleDateFormat(dateFormat);
         formatter.timeZone = TimeZone.getTimeZone(timezone);
         var value : Date? = null;
@@ -61,6 +61,12 @@ object DateUtils {
         dateFormatter.timeZone = TimeZone.getDefault();
         val dt = dateFormatter.format(value);
 
+        return dt;
+    }
+
+    fun format(date: Date,dateFormat: String = "dd/MM/yyyy hh:mmaa") : String {
+        val dateFormatter = SimpleDateFormat(dateFormat);
+        val dt = dateFormatter.format(date);
         return dt;
     }
 }

@@ -6,6 +6,7 @@ import android.content.Context
 import android.support.design.widget.CoordinatorLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
+import android.widget.Spinner
 
 /**
  * Created by ikraammoothianpillay1 on 2/20/16.
@@ -15,5 +16,6 @@ interface IKaiActivity {
     fun getContext() : Context
     fun getActivity() : AppCompatActivity
     fun getToolbar() : Toolbar?
+    fun getSpinner() : Spinner?
     fun getCoordinatorLayout() : CoordinatorLayout?
 }

@@ -13,12 +13,12 @@
         app:recyclerClipToPadding="false"
         app:scrollbarStyle="insideInset"/>
 
-    <com.github.clans.fab.FloatingActionButton
+    <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        android:src="@drawable/gw_menu"
+        fab:menu_icon="@drawable/gw_menu"
         android:layout_margin="@dimen/fab_margin"
         fab:fab_colorNormal="@color/app_primary"
         fab:fab_colorPressed="@color/app_primary_pressed"

@@ -14,6 +14,10 @@ abstract class BaseAdapter<T>()
 : BaseSwipeAdapter<BaseViewHolder<T>>() {
     protected var items: MutableList<T> = ArrayList<T>()
 
+    fun get(position: Int) : T {
+        return this.items[position]
+    }
+
     fun add(item: T) {
         this.items.add(item)
         notifyItemInserted(items.size - 1)

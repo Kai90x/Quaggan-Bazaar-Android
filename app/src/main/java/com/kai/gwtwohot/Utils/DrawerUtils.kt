@@ -7,9 +7,7 @@ import android.view.Gravity
 import com.kai.gwtwohot.Activities.IKaiActivity
 import com.kai.gwtwohot.Dialogs.DonationDialog
 import com.kai.gwtwohot.Dialogs.ApiHelpDialog
-import com.kai.gwtwohot.Fragments.EventsFragment
-import com.kai.gwtwohot.Fragments.NewsFragment
-import com.kai.gwtwohot.Fragments.SimpleFragment
+import com.kai.gwtwohot.Fragments.*
 import com.kai.gwtwohot.R
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
@@ -29,6 +27,7 @@ object DrawerUtils {
         val eventsItem = PrimaryDrawerItem().withName(R.string.events).withIcon(R.drawable.gw_drawer_dragon)
         val legendaryItem = PrimaryDrawerItem().withName(R.string.legendarycraft).withIcon(R.drawable.gw_drawer_forge)
         val achievements = PrimaryDrawerItem().withName(R.string.achievements).withIcon(R.drawable.gw_drawer_achievement)
+        val dungeons = PrimaryDrawerItem().withName(R.string.dungeons).withIcon(R.drawable.gw_drawer_dungeons)
 
         val itemHeader = PrimaryDrawerItem().withName(R.string.items).withSelectable(false)
         val items = PrimaryDrawerItem().withName(R.string.items).withIcon(R.drawable.gw_drawer_swords)
@@ -62,7 +61,7 @@ object DrawerUtils {
         return drawer
                 .withDrawerGravity(Gravity.START)
                 .addDrawerItems(
-                        newsItem,eventsItem,legendaryItem,achievements,
+                        newsItem,eventsItem,legendaryItem,achievements,dungeons,
                         divider,
                         itemHeader,items,favoriteItems,itemNotified,
                         divider,
@@ -75,7 +74,10 @@ object DrawerUtils {
                         when(drawerItem) {
                             newsItem -> kaiActivity.setFragment(NewsFragment.newInstance())
                             eventsItem -> kaiActivity.setFragment(EventsFragment.newInstance())
+                            dungeons -> kaiActivity.setFragment(DungeonsFragment.newInstance())
+                            legendaryItem -> kaiActivity.setFragment(LegendariesFragment.newInstance())
                             apiHelp -> ApiHelpDialog.newInstance(R.layout.fragment_api_key_help,R.string.account_api_Help).show(kaiActivity.getActivity().supportFragmentManager, null)
+                            email -> kaiActivity.setFragment(EmailFragment.newInstance())
                             share -> shareApp(kaiActivity.getContext())
                             childFund -> DonationDialog.newInstance().show(kaiActivity.getActivity().supportFragmentManager, null)
                         }

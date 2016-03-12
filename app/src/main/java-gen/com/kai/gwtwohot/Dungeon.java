@@ -8,7 +8,14 @@ public class Dungeon {
 
     private Long id;
     /** Not-null value. */
-    private String idSelected;
+    private String dungeon;
+    /** Not-null value. */
+    private String path;
+    /** Not-null value. */
+    private String goldreward;
+    /** Not-null value. */
+    private String tokenreward;
+    private boolean isSelected;
     /** Not-null value. */
     private java.util.Date dateAdded;
 
@@ -19,9 +26,13 @@ public class Dungeon {
         this.id = id;
     }
 
-    public Dungeon(Long id, String idSelected, java.util.Date dateAdded) {
+    public Dungeon(Long id, String dungeon, String path, String goldreward, String tokenreward, boolean isSelected, java.util.Date dateAdded) {
         this.id = id;
-        this.idSelected = idSelected;
+        this.dungeon = dungeon;
+        this.path = path;
+        this.goldreward = goldreward;
+        this.tokenreward = tokenreward;
+        this.isSelected = isSelected;
         this.dateAdded = dateAdded;
     }
 
@@ -34,13 +45,51 @@ public class Dungeon {
     }
 
     /** Not-null value. */
-    public String getIdSelected() {
-        return idSelected;
+    public String getDungeon() {
+        return dungeon;
     }
 
     /** Not-null value; ensure this value is available before it is saved to the database. */
-    public void setIdSelected(String idSelected) {
-        this.idSelected = idSelected;
+    public void setDungeon(String dungeon) {
+        this.dungeon = dungeon;
+    }
+
+    /** Not-null value. */
+    public String getPath() {
+        return path;
+    }
+
+    /** Not-null value; ensure this value is available before it is saved to the database. */
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    /** Not-null value. */
+    public String getGoldreward() {
+        return goldreward;
+    }
+
+    /** Not-null value; ensure this value is available before it is saved to the database. */
+    public void setGoldreward(String goldreward) {
+        this.goldreward = goldreward;
+    }
+
+    /** Not-null value. */
+    public String getTokenreward() {
+        return tokenreward;
+    }
+
+    /** Not-null value; ensure this value is available before it is saved to the database. */
+    public void setTokenreward(String tokenreward) {
+        this.tokenreward = tokenreward;
+    }
+
+    public boolean getIsSelected() {
+        return isSelected;
+    }
+
+    public void setIsSelected(boolean isSelected) {
+        this.isSelected = isSelected;
     }
 
     /** Not-null value. */

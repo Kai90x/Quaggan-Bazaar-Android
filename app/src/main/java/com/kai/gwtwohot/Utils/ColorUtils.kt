@@ -6,6 +6,7 @@ import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.support.v4.content.ContextCompat
+import java.util.*
 
 /**
  * Created by ikraammoothianpillay1 on 2/20/16.
@@ -37,6 +38,11 @@ object ColorUtils {
         val drawable = ContextCompat.getDrawable(context,drawable);
         drawable.setColorFilter(color, PorterDuff.Mode.SRC_IN)
         return drawable
+    }
+
+    fun randomColor() : Int {
+        val rnd = Random()
+        return Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
     }
 
 }

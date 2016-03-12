@@ -2,16 +2,20 @@ package com.kai.gwtwohot.Fragments
 
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import android.widget.Spinner
 import com.github.clans.fab.FloatingActionButton
+import com.github.clans.fab.FloatingActionMenu
 import com.kai.gwtwohot.Activities.MainActivity
 import com.kai.gwtwohot.Adapters.BaseAdapter
 import com.kai.gwtwohot.Extensions.*
+import com.kai.gwtwohot.Layouts.WrappableGridLayoutManager
 import com.kai.gwtwohot.R
 import com.kai.gwtwohot.Utils.NetworkUtils
 import com.malinskiy.superrecyclerview.OnMoreListener
@@ -20,7 +24,7 @@ import tr.xip.errorview.ErrorView
 
 abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefreshListener, OnMoreListener {
     protected var recyclerList: SuperRecyclerView? = null
-    protected var fab: FloatingActionButton? = null
+    protected var fab: FloatingActionMenu? = null
     protected var errorView: ErrorView? = null
     protected var progress: ProgressBar? = null
     protected var batchSize: Int = 25
@@ -37,7 +41,7 @@ abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefres
         recyclerList = rootView.findViewById(R.id.fragment_list) as SuperRecyclerView
         errorView = rootView.findViewById(R.id.errorView) as ErrorView
         progress = rootView.findViewById(R.id.progressBar) as ProgressBar
-        fab = rootView.findViewById(R.id.fab) as FloatingActionButton
+        fab = rootView.findViewById(R.id.fab) as FloatingActionMenu
 
         rootView.circularReveal()
         return rootView
@@ -45,14 +49,14 @@ abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefres
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        kaiActivity = if (activity is MainActivity) this.activity as MainActivity else null
         mAdapter = initAdapter()
         initRecycler()
+        kaiActivity?.getSpinner()?.visibility = if (showSpinner()) View.VISIBLE else View.GONE
     }
 
     private fun initRecycler() {
         if (recyclerList != null) {
-            val layout = LinearLayoutManager(kaiActivity!!.getContext())
+            val layout = GridLayoutManager(kaiActivity!!.getContext(),gridSize())
             recyclerList?.setLayoutManager(layout)
 
             if (shouldLoadMore())
@@ -68,19 +72,18 @@ abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefres
                         super.onScrolled(recyclerView, dx, dy);
                         if (Math.abs(dy) > mScrollOffset) {
                             if (dy > 0) {
-                                fab?.hide(true);
+                                fab?.showMenu(true);
                             } else {
-                                fab?.show(true);
+                                fab?.hideMenu(true);
                             }
                         }
                     }
                 });
             } else  {
-                fab?.hide(true);
+                fab?.hideMenu(true);
             }
 
             recyclerList?.adapter = mAdapter
-
             getFeed()
         }
     }
@@ -127,10 +130,12 @@ abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefres
     }
 
     protected open fun showFloatingButton() : Boolean = false
+    protected open fun showSpinner() : Boolean = false
 
     abstract fun callApi()
     abstract fun getOfflineData()
     abstract fun initAdapter() : BaseAdapter<T>
     abstract fun shouldLoadMore() : Boolean
     abstract fun shouldRefresh() : Boolean
+    abstract fun gridSize() : Int
 }

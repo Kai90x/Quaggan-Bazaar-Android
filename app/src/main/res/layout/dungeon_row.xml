@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent"
+    android:padding="@dimen/padding_tiny"
+    android:id="@+id/itemLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPath"
+        android:text="Boss Name"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/abc_text_size_body_2_material"
+        android:paddingLeft="@dimen/padding_small"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTokenReward"
+        android:text="Token"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/abc_text_size_body_2_material"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtGoldReward"
+        android:text="Reward"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/abc_text_size_body_2_material"
+        android:gravity="end"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/chkDungeon"
+        android:layout_toRightOf="@+id/txtTokenReward" />
+
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkDungeon"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <View style="@style/Divider"
+        android:id="@+id/divider"
+        android:layout_marginTop="@dimen/margin_tiny"
+        android:layout_margin="@dimen/margin_small"
+        android:layout_width="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

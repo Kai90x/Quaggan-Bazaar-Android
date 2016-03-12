@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/abc_text_size_subtitle_material_toolbar"
+        android:text="@string/email_tag"
+        android:id="@+id/lblSendEmail"
+        android:layout_margin="@dimen/padding_medium"
+        android:layout_gravity="center_vertical"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:textColor="@color/primary_text"
+        android:hint="@string/email_email_hint"
+        android:layout_margin="@dimen/margin_medium"
+        android:id="@+id/edtEmailAddress"
+        android:layout_gravity="center_vertical"
+        android:layout_below="@+id/lblSendEmail"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/primary_text"
+        android:hint="@string/email_subject_hint"
+        android:id="@+id/edtEmailSubject"
+        android:layout_margin="@dimen/margin_medium"
+        android:layout_gravity="center_vertical"
+        android:layout_below="@+id/edtEmailAddress"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:textColor="@color/primary_text"
+        android:hint="@string/email_body_hint"
+        android:id="@+id/edtEmailContent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.80"
+        android:layout_above="@+id/btnSendEmail"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:layout_below="@+id/edtSubject" />
+
+    <Button
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email_btn_email"
+        android:layout_margin="20dp"
+        android:background="@color/GuildMainColor"
+        android:textColor="@color/MilkWhite"
+        android:id="@+id/btnSendEmail"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentBottom="true" />
+
+
+
+</RelativeLayout>

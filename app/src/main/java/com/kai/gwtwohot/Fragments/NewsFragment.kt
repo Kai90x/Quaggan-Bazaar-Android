@@ -95,6 +95,8 @@ class NewsFragment : BaseFeedFragment<NewsInfo>() {
         return true
     }
 
+    override fun gridSize(): Int = 1
+
     companion object {
         fun newInstance() : NewsFragment {
             val frag = NewsFragment()

@@ -7,7 +7,7 @@ import de.greenrobot.daogenerator.Schema;
 public class MyDaoGenerator {
 
     public static void main(String args[]) throws Exception {
-        Schema schema = new Schema(1008, "com.kai.gwtwohot");
+        Schema schema = new Schema(1009, "com.kai.gwtwohot");
         addFavoriteItem(schema);
         addAPIKey(schema);
         addEvent(schema);
@@ -36,7 +36,11 @@ public class MyDaoGenerator {
     public static void addDungeon(Schema schema) {
         Entity dungeon = schema.addEntity("Dungeon");
         dungeon.addIdProperty().autoincrement();
-        dungeon.addStringProperty("idSelected").notNull();
+        dungeon.addStringProperty("dungeon").notNull();
+        dungeon.addStringProperty("path").notNull();
+        dungeon.addStringProperty("goldreward").notNull();
+        dungeon.addStringProperty("tokenreward").notNull();
+        dungeon.addBooleanProperty("isSelected").notNull();
         dungeon.addDateProperty("dateAdded").notNull();
     }
 

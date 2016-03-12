@@ -64,6 +64,7 @@ dependencies {
     compile 'com.paypal.sdk:paypal-android-sdk:2.12.4'
     compile 'com.android.support:design:23.1.1'
     compile 'com.github.clans:fab:1.6.2'
+    compile 'com.makeramen:roundedimageview:2.2.1'
 }
 
 
