@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_small"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:id="@+id/linearLayout">
 
         <TextView
             android:id="@+id/txtAccountLink"
@@ -62,5 +63,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+
+        <Button
+            android:layout_width="@dimen/abc_action_button_min_width_material"
+            android:layout_height="@dimen/abc_action_button_min_height_material"
+            android:text="@string/dialog_ok"
+            android:textColor="@color/accent"
+            android:background="@android:color/transparent"
+            android:id="@+id/btnOk"
+            android:layout_margin="@dimen/margin_small"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="right" />
     </LinearLayout>
+
 </RelativeLayout>

@@ -54,9 +54,9 @@ interface QuagganAPI {
               @Query("orderby") orderby: String? = null,
               @Query("orderDesc") orderDesc: String? = null,
               @Query("islight") islight: Int? = null,
-              @Query("includePrice") includePrice: Int? = null,
+              @Query("includePrice") includePrice: Int? = 1,
               @Query("page") page: Int,
-              @Query("batch_size") batch_size: Int = 50): QuagganJson<Item>
+              @Query("batch_size") batch_size: Int = 50): Observable<QuagganJson<Item>>
 
     companion object {
        const val BaseURL = "http://quagganbazaarapi.kai-mx.net"

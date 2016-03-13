@@ -76,6 +76,7 @@ object DrawerUtils {
                             eventsItem -> kaiActivity.setFragment(EventsFragment.newInstance())
                             dungeons -> kaiActivity.setFragment(DungeonsFragment.newInstance())
                             legendaryItem -> kaiActivity.setFragment(LegendariesFragment.newInstance())
+                            items -> kaiActivity.setFragment(ItemsFragment.newInstance())
                             apiHelp -> ApiHelpDialog.newInstance(R.layout.fragment_api_key_help,R.string.account_api_Help).show(kaiActivity.getActivity().supportFragmentManager, null)
                             email -> kaiActivity.setFragment(EmailFragment.newInstance())
                             share -> shareApp(kaiActivity.getContext())

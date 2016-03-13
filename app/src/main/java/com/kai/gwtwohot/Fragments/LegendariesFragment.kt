@@ -1,29 +1,18 @@
 package com.kai.gwtwohot.Fragments
 
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Toast
 import com.kai.gwtwohot.APIServices.QuagganAPI
 import com.kai.gwtwohot.Adapters.BaseAdapter
-import com.kai.gwtwohot.Adapters.Events.EventAdapter
-import com.kai.gwtwohot.Adapters.Events.EventInfo
 import com.kai.gwtwohot.Adapters.Legendaries.LegendariesAdapter
 import com.kai.gwtwohot.Adapters.Legendaries.LegendariesInfo
-import com.kai.gwtwohot.DaoRepositories.EventRepository
-import com.kai.gwtwohot.Event
 import com.kai.gwtwohot.Factory.RetrofitFactory
 import com.kai.gwtwohot.R
 import com.kai.gwtwohot.Serialization.QuagganApi.Details
-import com.kai.gwtwohot.Serialization.QuagganApi.Events.Events
 import com.kai.gwtwohot.Serialization.QuagganApi.Legendaries.Legendaries
-import com.kai.gwtwohot.Utils.DateUtils
 import com.kai.gwtwohot.Utils.ExceptionUtils
 import rx.Subscriber
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
-import java.util.*
 
 /**
  * Created by ikraammoothianpillay1 on 3/12/16.

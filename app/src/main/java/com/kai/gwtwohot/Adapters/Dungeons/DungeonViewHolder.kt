@@ -43,7 +43,7 @@ class DungeonViewHolder(itemView: View,kaiActivity: IKaiActivity) : BaseViewHold
 
         this.vItemLayout.setOnClickListener(null)
         this.chkDungeon.setOnCheckedChangeListener(null)
-        
+
         this.chkDungeon.isChecked = item.dungeon.isSelected
         this.dungeon = item.dungeon
 

@@ -20,4 +20,5 @@ class Item {
     var game_types: List<String>? = null
     var restrictions: List<Any>? = null
     var details: Details? = null
+    var price: Price? = null
 }

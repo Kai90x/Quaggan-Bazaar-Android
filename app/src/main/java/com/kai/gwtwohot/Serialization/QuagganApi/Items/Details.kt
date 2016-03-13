@@ -27,5 +27,5 @@ class Details {
     var damage_type: String? = null
     var min_power: String? = null
     var max_power: String? = null
-    var infix_upgrade: InfixUpgrade? = null
+    var infix_upgrade: Any? = null
 }

@@ -2,11 +2,13 @@ package com.kai.gwtwohot.Dialogs
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.kai.gwtwohot.Extensions.circularReveal
 import com.kai.gwtwohot.Fragments.SimpleFragment
 
@@ -19,7 +21,9 @@ class ApiHelpDialog : DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater!!.inflate(arguments.getInt(SimpleFragment.LAYOUT), container, false)
         dialog.setTitle(arguments.getInt(SimpleFragment.TITLE))
-        rootView?.circularReveal()
+        (rootView.findViewById(R.id.btnOk) as Button?)?.setOnClickListener({
+            dialog.cancel()
+        })
         return rootView
     }
 

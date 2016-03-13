@@ -19,7 +19,7 @@
                 android:id="@+id/txtTitle"
                 android:layout_alignParentTop="true"
                 android:text="Title"
-                android:textColor="@color/primary_text"
+                android:textColor="@color/accent"
                 android:textStyle="bold"
                 android:textSize="@dimen/abc_text_size_title_material" />
 

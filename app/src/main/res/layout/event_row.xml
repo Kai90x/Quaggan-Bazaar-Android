@@ -73,7 +73,7 @@
     <View style="@style/Divider"
         android:id="@+id/divider"
         android:layout_marginTop="@dimen/margin_tiny"
-        android:layout_marginLeft="56dp"
+        android:layout_marginLeft="@dimen/divider_padding"
         android:layout_width="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

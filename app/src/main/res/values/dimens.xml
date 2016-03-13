@@ -5,4 +5,6 @@
     <dimen name="divider">1dp</dimen>
     <dimen name="divider2">3dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="divider_padding">68dp</dimen>
 </resources>
