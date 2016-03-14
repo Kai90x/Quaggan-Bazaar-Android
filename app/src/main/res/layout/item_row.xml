@@ -11,11 +11,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rowLayout"
-        android:elevation="30dp">
+        android:id="@+id/rowLayout">
 
         <RelativeLayout
-            android:padding="@dimen/padding_small"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -35,11 +33,14 @@
                 android:id="@+id/item_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/imgItem"
-                android:textColor="#333"
+                android:textColor="@color/primary_text"
                 android:textSize="@dimen/abc_text_size_small_material"
-                android:layout_marginTop="@dimen/line_large"
-                tools:ignore="MissingPrefix" />
+                android:textStyle="bold"
+                android:gravity="start"
+                tools:ignore="MissingPrefix"
+                android:layout_toLeftOf="@+id/btnLike"
+                android:layout_toRightOf="@+id/imgItem"
+                android:layout_toEndOf="@+id/imgItem" />
 
             <TextView
                 android:id="@+id/item_buyprice"
@@ -48,7 +49,7 @@
                 android:layout_toRightOf="@id/imgItem"
                 android:textSize="@dimen/abc_text_size_caption_material"
                 android:layout_below="@id/item_name"
-                android:textColor="#777" />
+                android:textColor="@color/secondary_text" />
 
             <TextView
                 android:id="@+id/item_sellprice"
@@ -57,22 +58,22 @@
                 android:layout_toRightOf="@id/imgItem"
                 android:textSize="@dimen/abc_text_size_caption_material"
                 android:layout_below="@id/item_buyprice"
-                android:textColor="#777" />
+                android:textColor="@color/secondary_text" />
 
             <com.like.LikeButton
                 app:icon_type="heart"
-                app:icon_size="25dp"
+                app:icon_size="20dp"
                 android:id="@+id/btnLike"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="match_parent"/>
         </RelativeLayout>
 
         <View style="@style/Divider"
             android:id="@+id/divider"
-            android:layout_marginLeft="@dimen/divider_padding"
+            android:layout_marginLeft="@dimen/divider_padding_medium"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:padding="@dimen/dialog_text_padding"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:id="@+id/scrollView">
+
+        <LinearLayout
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="@dimen/abc_text_size_body_2_material"
+                android:text="@string/search_name"
+                android:id="@+id/lblSearchName" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/abc_text_size_body_2_material"
+                android:id="@+id/edtSearchName"/>
+
+            <TextView
+                android:paddingTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="@dimen/abc_text_size_body_2_material"
+                android:text="@string/search_type"
+                android:id="@+id/lblSearchType" />
+
+            <Spinner
+                android:popupBackground="@color/SpinnerBackground"
+                android:paddingTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/abc_text_size_body_2_material"
+                android:id="@+id/spnType"
+                android:textColor="@color/primary_text"/>
+
+            <TextView
+                android:paddingTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="@dimen/abc_text_size_body_2_material"
+                android:text="@string/search_subtype"
+                android:id="@+id/lblSearchSubtype" />
+
+            <Spinner
+                android:popupBackground="@color/SpinnerBackground"
+                android:paddingTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:id="@+id/spnSubtype"/>
+
+            <TextView
+                android:paddingTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="@dimen/abc_text_size_body_2_material"
+                android:text="@string/search_rarity"
+                android:id="@+id/lblSearchrarity" />
+
+            <Spinner
+                android:popupBackground="@color/SpinnerBackground"
+                android:paddingTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spnRarity"
+                android:textColor="@color/primary_text"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="0.5"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:paddingTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_text"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/abc_text_size_body_2_material"
+                        android:text="@string/search_levelmin"
+                        android:id="@+id/lblSearchLevelMin" />
+
+                    <EditText
+                        android:paddingTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textColor="@color/primary_text"
+                        android:id="@+id/edtLevelMin"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="0.5"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:paddingTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_text"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/abc_text_size_body_2_material"
+                        android:text="@string/search_levelmax"
+                        android:id="@+id/lblSearchLevelMax" />
+
+                    <EditText
+                        android:paddingTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textColor="@color/primary_text"
+                        android:id="@+id/edtLevelMax"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="0.5"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:paddingTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_text"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/abc_text_size_body_2_material"
+                        android:text="@string/search_buyPriceMin"
+                        android:id="@+id/lblSearchBuyPriceMin" />
+
+                    <EditText
+                        android:paddingTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textColor="@color/primary_text"
+                        android:id="@+id/edtBuyPriceMin"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="0.5"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:paddingTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_text"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/abc_text_size_body_2_material"
+                        android:text="@string/search_buyPriceMax"
+                        android:id="@+id/lblSearchBuyPriceMax" />
+
+                    <EditText
+                        android:paddingTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textColor="@color/primary_text"
+                        android:id="@+id/edtBuyPriceMax"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="0.5"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:paddingTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_text"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/abc_text_size_body_2_material"
+                        android:text="@string/search_sellPriceMin"
+                        android:id="@+id/lblSearchSellPriceMin" />
+
+                    <EditText
+                        android:paddingTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textColor="@color/primary_text"
+                        android:id="@+id/edtSellPriceMin"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="0.5"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:paddingTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_text"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/abc_text_size_body_2_material"
+                        android:text="@string/search_sellPriceMax"
+                        android:id="@+id/lblSearchSellPriceMax" />
+
+                    <EditText
+                        android:paddingTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textColor="@color/primary_text"
+                        android:id="@+id/edtSellPriceMax"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:paddingTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="@dimen/abc_text_size_body_2_material"
+                android:text="@string/search_order_by"
+                android:id="@+id/lblSearchOrderby" />
+
+            <Spinner
+                android:popupBackground="@color/SpinnerBackground"
+                android:paddingTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/abc_text_size_body_2_material"
+                android:id="@+id/spnOrderBy"
+                android:textColor="@color/primary_text"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:paddingTop="@dimen/dialog_button_padding"
+        style="@style/Button"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/dialog_button_height"
+        android:text="@string/search_cancel"
+        android:id="@+id/btnCancel"
+        android:layout_gravity="right"
+        android:layout_below="@+id/scrollView"
+        android:layout_toLeftOf="@+id/btnSearch"
+        android:layout_toStartOf="@+id/btnSearch" />
+
+    <Button
+        android:paddingTop="@dimen/dialog_button_padding"
+        style="@style/Button"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/dialog_button_height"
+        android:text="@string/search_title"
+        android:id="@+id/btnSearch"
+        android:layout_gravity="right"
+        android:layout_below="@+id/scrollView"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="25dp" />
+</RelativeLayout>

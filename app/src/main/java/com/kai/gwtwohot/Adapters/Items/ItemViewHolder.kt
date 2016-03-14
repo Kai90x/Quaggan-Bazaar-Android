@@ -40,8 +40,8 @@ class ItemViewHolder(itemView: View,kaiActivity: IKaiActivity) : BaseViewHolder<
 
     override fun bind(item: ItemInfo) {
         this.vName.text = item.name
-        this.vBuyPrice.text = kaiActivity.getContext().getString(R.string.buy_price).plus(if (item.buyprice.isNullOrEmpty()) "-" else GuildWarsUtils.getFormattedPrice(item.buyprice!!))
-        this.vSellPrice.text = kaiActivity.getContext().getString(R.string.sell_price).plus(if (item.sellprice.isNullOrEmpty()) "-" else GuildWarsUtils.getFormattedPrice(item.sellprice!!))
+        this.vBuyPrice.text = kaiActivity.getContext().getString(R.string.buy_price).plus(" ").plus(if (item.buyprice.isNullOrEmpty()) "-" else GuildWarsUtils.getFormattedPrice(item.buyprice!!))
+        this.vSellPrice.text = kaiActivity.getContext().getString(R.string.sell_price).plus(" ").plus(if (item.sellprice.isNullOrEmpty()) "-" else GuildWarsUtils.getFormattedPrice(item.sellprice!!))
 
         this.vBuyPrice.getSmiley()
         this.vSellPrice.getSmiley()

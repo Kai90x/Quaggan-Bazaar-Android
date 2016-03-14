@@ -1,11 +1,14 @@
 package com.kai.gwtwohot.Fragments
 
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.util.Log
 import com.kai.gwtwohot.APIServices.QuagganAPI
 import com.kai.gwtwohot.Adapters.BaseAdapter
 import com.kai.gwtwohot.Adapters.Items.ItemAdapter
 import com.kai.gwtwohot.Adapters.Items.ItemInfo
+import com.kai.gwtwohot.Dialogs.ApiHelpDialog
+import com.kai.gwtwohot.Dialogs.ItemSearchDialog
 import com.kai.gwtwohot.Factory.RetrofitFactory
 import com.kai.gwtwohot.R
 import com.kai.gwtwohot.Serialization.QuagganApi.Items.Item
@@ -24,6 +27,11 @@ class ItemsFragment : BaseFeedFragment<ItemInfo>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         setToolbarTitle(R.string.items)
+        fab?.menuIconView?.setImageDrawable(ContextCompat.getDrawable(activity,R.drawable.gw_find))
+        fab?.isIconAnimated = false
+        fab?.setOnMenuButtonClickListener {
+            ItemSearchDialog.newInstance().show(kaiActivity?.getActivity()?.supportFragmentManager, null)
+        }
     }
 
     override fun callApi() {
