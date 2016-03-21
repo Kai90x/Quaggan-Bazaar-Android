@@ -58,6 +58,10 @@ class MainActivity : AppCompatActivity(), IKaiActivity {
         return this
     }
 
+    override fun getCurrentFragment() : Fragment? {
+        return fragmentManager.findFragmentById(R.id.container)
+    }
+
     override fun getToolbar() : Toolbar? {
         return myToolbar
     }

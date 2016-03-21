@@ -18,4 +18,5 @@ interface IKaiActivity {
     fun getToolbar() : Toolbar?
     fun getSpinner() : Spinner?
     fun getCoordinatorLayout() : CoordinatorLayout?
+    fun getCurrentFragment() : Fragment?
 }

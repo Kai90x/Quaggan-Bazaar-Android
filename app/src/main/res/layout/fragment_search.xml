@@ -287,6 +287,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/abc_text_size_body_2_material"
                 android:id="@+id/spnOrderBy"
+                android:entries="@array/orderby_array"
+                android:entryValues="@array/orderby_array_value"
                 android:textColor="@color/primary_text"/>
 
         </LinearLayout>

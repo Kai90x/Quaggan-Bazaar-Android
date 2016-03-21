@@ -118,7 +118,7 @@ abstract class BaseFeedFragment<T> : BaseFragment(), SwipeRefreshLayout.OnRefres
         getFeed()
     }
 
-    private fun getFeed() {
+    protected fun getFeed() {
         if (getDataFromAPI) {
             if (NetworkUtils.isNetworkAvailable(kaiActivity!!.getContext())) {
                 callApi()

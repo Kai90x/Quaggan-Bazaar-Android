@@ -109,5 +109,28 @@ object GuildWarsUtils {
         return 0
     }
 
+    fun getItemSubtype(context: Context, itemType: String): Array<String>? {
+        val res = context.resources
+
+        if (itemType == context.getString(R.string.item_armor))
+            return res.getStringArray(R.array.subtype_armor_array)
+        if (itemType == context.getString(R.string.item_consumable))
+            return res.getStringArray(R.array.subtype_consumable_array)
+        if (itemType == context.getString(R.string.item_container))
+            return res.getStringArray(R.array.subtype_container_array)
+        if (itemType == context.getString(R.string.item_gathering))
+            return res.getStringArray(R.array.subtype_gatheringtool_array)
+        if (itemType == context.getString(R.string.item_gizmo))
+            return res.getStringArray(R.array.subtype_gizmo_array)
+        if (itemType == context.getString(R.string.item_trinket))
+            return res.getStringArray(R.array.subtype_trinket_array)
+        if (itemType == context.getString(R.string.item_upgrade_component))
+            return res.getStringArray(R.array.subtype_upgradecomponent_array)
+        if (itemType == context.getString(R.string.item_weapon))
+            return res.getStringArray(R.array.subtype_weapon_array)
+
+        return null
+    }
+
 
 }
